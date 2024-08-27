@@ -5,21 +5,17 @@ using UnityEngine;
 public class PlayerData : ScriptableObject
 {
     [SerializeField]
-    private int m_level;
-    public int m_Level => m_Level;
+    public int m_level;
     [SerializeField]
-    private int m_hp;
-    public int m_Hp => m_hp;
+    public int m_hp;
     [SerializeField]
-    private int m_damage;
-    public int m_Damage => m_damage;
+    public int m_damage;
     [SerializeField]
-    private int m_armor;
-    public int m_Armor => m_armor;
+    public int m_armor;
     [SerializeField]
-    private int m_moveSpeed;
-    public int m_MoveSpeed => m_moveSpeed;
+    public int m_moveSpeed;
     [SerializeField]
-    private int m_attackSpeed;
-    public int m_AttackSpeed => m_attackSpeed;
+    public int m_attackDelay;
+    [SerializeField]
+    public int m_coin;
 }

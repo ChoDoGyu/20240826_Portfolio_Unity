@@ -9,18 +9,22 @@ public class MonsterController : FSM<MonsterController>
     private MonsterData m_monsterData;
     public MonsterData m_MonsterData => m_monsterData;
 
-    NavMeshAgent m_monsterAgent;
+    public NavMeshAgent m_monsterAgent;
     [SerializeField]
     public PlayerManager m_player;
 
     [HideInInspector]
     public float m_lastAttackTime = 0;
 
+    HPManager m_hpManager;
+
     private void Awake()
     {
         m_monsterAgent = GetComponent<NavMeshAgent>();
         m_player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
         InitState(this, MonsterStateIdle._Inst);
+        m_hpManager = GetComponent<HPManager>();
+        m_hpManager.m_hp = m_monsterData.m_hp;
     }
     void Update()
     {

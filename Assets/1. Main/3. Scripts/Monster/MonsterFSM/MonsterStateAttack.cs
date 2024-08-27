@@ -6,7 +6,7 @@ public class MonsterStateAttack : FSMSingleton<MonsterStateAttack>, FSMState<Mon
 {
     public void Enter(MonsterController e)
     {
-        
+        e.m_monsterAgent.stoppingDistance = 10;
     }
     public void Execute(MonsterController e)
     {

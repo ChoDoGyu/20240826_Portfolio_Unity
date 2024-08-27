@@ -9,12 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63913a550d80b294e8bf46de9bc28ecc, type: 3}
-  m_Name: TestMonster1
+  m_Script: {fileID: 11500000, guid: 58e504bef68f0aa4f8cc8ba4acb5be9f, type: 3}
+  m_Name: Skill5
   m_EditorClassIdentifier: 
-  m_name: TestMonster1
-  m_hp: 300
-  m_damage: 1
-  m_sightRange: 11
-  m_attackRange: 1.1
-  m_attackDelay: 1.1
+  m_skillName: Skill5
+  m_skillDamage: 1.5
+  m_attackRange: 1.5

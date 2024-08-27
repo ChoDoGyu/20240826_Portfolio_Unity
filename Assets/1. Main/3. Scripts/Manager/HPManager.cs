@@ -4,5 +4,9 @@ using UnityEngine;
 
 public class HPManager : MonoBehaviour
 {
-    
+    public float m_hp;
+    void UpdateHP()
+    {
+
+    }
 }
