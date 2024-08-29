@@ -12,6 +12,7 @@ public class PlayerMove : MonoBehaviour
         m_agent = GetComponent<NavMeshAgent>();
         
     }
+    
     public void Set_Dest(Vector3 dest)
     {
         m_agent.SetDestination(dest);

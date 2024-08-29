@@ -372,6 +372,7 @@
 "Assets/1. Main/3. Scripts/FSM/FSMState.cs"
 "Assets/1. Main/3. Scripts/Ground.cs"
 "Assets/1. Main/3. Scripts/Interface/IClickable.cs"
+"Assets/1. Main/3. Scripts/Manager/AttackAreaManager.cs"
 "Assets/1. Main/3. Scripts/Manager/HPManager.cs"
 "Assets/1. Main/3. Scripts/Monster/MonsterController.cs"
 "Assets/1. Main/3. Scripts/Monster/MonsterFSM/MonsterStateAttack.cs"

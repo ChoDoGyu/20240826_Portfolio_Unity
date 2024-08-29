@@ -5,11 +5,12 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     public PlayerMove m_move;
-
+    public PlayerAttack m_attack;
     private Camera m_camera;
     void Awake()
     {
         m_move = GetComponent<PlayerMove>();
+        m_attack = GetComponent<PlayerAttack>();
         m_camera = Camera.main;
     }
     void Update()

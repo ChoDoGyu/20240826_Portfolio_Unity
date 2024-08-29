@@ -68,6 +68,7 @@
     <Compile Include="Assets\1. Main\3. Scripts\Data\PlayerData.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\CSVtoScriptableObject\SCVtoSO.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerManager.cs" />
+    <Compile Include="Assets\1. Main\3. Scripts\Manager\AttackAreaManager.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Ground.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\FSM\FSMState.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\FSM\FSMSingleton.cs" />

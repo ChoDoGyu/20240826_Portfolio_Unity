@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class MonsterController : FSM<MonsterController>
+public class MonsterController : FSM<MonsterController>, IClickable
 {
     [SerializeField]
     private MonsterData m_monsterData;
@@ -23,6 +23,7 @@ public class MonsterController : FSM<MonsterController>
         m_monsterAgent = GetComponent<NavMeshAgent>();
         m_player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
         InitState(this, MonsterStateIdle._Inst);
+        
         m_hpManager = GetComponent<HPManager>();
         m_hpManager.m_hp = m_monsterData.m_hp;
     }
@@ -51,6 +52,11 @@ public class MonsterController : FSM<MonsterController>
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, m_monsterData.m_sightRange);
-        
+    }
+    public void Click(PlayerManager player, Vector3 hitPos)
+    {
+        if (player == null)
+            return;
+        //player.m_attack.m_attakAreas
     }
 }
