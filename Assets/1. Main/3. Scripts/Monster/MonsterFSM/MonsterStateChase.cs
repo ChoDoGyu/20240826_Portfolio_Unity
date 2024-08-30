@@ -13,6 +13,7 @@ public class MonsterStateChase : FSMSingleton<MonsterStateChase>, FSMState<Monst
         if (e.CheckDistance(e.m_player.transform.position, e.m_MonsterData.m_sightRange))
         {
             e.Move(e.m_player.transform.position);
+            e.Turn(e.m_player.transform.position);
             if (e.CheckDistance(e.m_player.transform.position, e.m_MonsterData.m_attackRange))
             {
                 e.ChangeState(MonsterStateAttack._Inst);

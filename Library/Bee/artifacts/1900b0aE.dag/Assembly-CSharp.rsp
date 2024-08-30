@@ -380,7 +380,6 @@
 "Assets/1. Main/3. Scripts/Monster/MonsterFSM/MonsterStateDamage.cs"
 "Assets/1. Main/3. Scripts/Monster/MonsterFSM/MonsterStateDie.cs"
 "Assets/1. Main/3. Scripts/Monster/MonsterFSM/MonsterStateIdle.cs"
-"Assets/1. Main/3. Scripts/Monster/TestMonster.cs"
 "Assets/1. Main/3. Scripts/Player/PlayerAttack.cs"
 "Assets/1. Main/3. Scripts/Player/PlayerManager.cs"
 "Assets/1. Main/3. Scripts/Player/PlayerMove.cs"

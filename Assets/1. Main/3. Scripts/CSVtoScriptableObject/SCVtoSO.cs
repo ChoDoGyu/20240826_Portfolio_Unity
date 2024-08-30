@@ -57,9 +57,9 @@ public class SCVtoSO
         {
             string[] splitData = allLine.Split(',');
 
-            if (splitData.Length != 3)
+            if (splitData.Length != 4)
             {
-                Debug.LogError("This File Data Count isn't 3 count");
+                Debug.LogError("This File Data Count isn't 4 count");
             }
             //ScriptableObject.CreateInstance<>함수는 Scriptable Object를 메모리에 생성하고 참조값을 반환하는 함수
             //그러므로 아직 파일로 생성되진 않았지만, Enemy라는 Scriptable Object의 클래스를 참조해서 쓰고 있다.
@@ -67,6 +67,7 @@ public class SCVtoSO
             skill.m_skillName = splitData[0];
             skill.m_skillDamage = float.Parse(splitData[1]);
             skill.m_attackRange = float.Parse(splitData[2]);
+            skill.m_skillCoolTime = float.Parse(splitData[3]);
 
             //AssetDatabase.CreateAsset를 이용해서 매개변수에 (생성할 파일, 파일 경로)를 정해주어 파일을 만듬
             AssetDatabase.CreateAsset(skill, $"Assets/1. Main/1. Data/ScriptableObject/Skill/{skill.m_skillName}.asset");

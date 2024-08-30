@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Skill1
   m_EditorClassIdentifier: 
   m_skillName: Skill1
-  m_skillDamage: 1.1
-  m_attackRange: 11
+  m_skillDamage: 1.2
+  m_attackRange: 12
+  m_skillCoolTime: 0

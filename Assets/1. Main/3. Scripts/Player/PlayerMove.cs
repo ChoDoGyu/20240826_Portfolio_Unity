@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class PlayerMove : MonoBehaviour
 {
+    [HideInInspector]
     public NavMeshAgent m_agent;
 
     private void Awake()

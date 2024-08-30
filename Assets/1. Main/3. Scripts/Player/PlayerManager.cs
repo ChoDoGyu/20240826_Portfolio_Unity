@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
+    [HideInInspector]
     public PlayerMove m_move;
+    [HideInInspector]
     public PlayerAttack m_attack;
     private Camera m_camera;
     void Awake()

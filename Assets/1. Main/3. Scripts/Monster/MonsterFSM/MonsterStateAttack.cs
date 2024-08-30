@@ -6,7 +6,7 @@ public class MonsterStateAttack : FSMSingleton<MonsterStateAttack>, FSMState<Mon
 {
     public void Enter(MonsterController e)
     {
-        e.m_monsterAgent.stoppingDistance = 10;
+        e.m_monsterAgent.stoppingDistance = e.m_MonsterData.m_attackRange;
     }
     public void Execute(MonsterController e)
     {
@@ -14,6 +14,7 @@ public class MonsterStateAttack : FSMSingleton<MonsterStateAttack>, FSMState<Mon
         {
             if (Time.time > e.m_lastAttackTime + e.m_MonsterData.m_attackDelay)
             {
+                e.Turn(e.m_player.transform.position);
                 Debug.Log("Attack!!");
                 e.m_lastAttackTime = Time.time;
             }

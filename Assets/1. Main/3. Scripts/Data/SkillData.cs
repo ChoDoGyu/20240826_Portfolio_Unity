@@ -10,4 +10,6 @@ public class SkillData : ScriptableObject
     public float m_skillDamage;
     [SerializeField]
     public float m_attackRange;
+    [SerializeField]
+    public float m_skillCoolTime;
 }

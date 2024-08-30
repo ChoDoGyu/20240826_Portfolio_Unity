@@ -8,9 +8,9 @@ public class MonsterController : FSM<MonsterController>, IClickable
     [SerializeField]
     private MonsterData m_monsterData;
     public MonsterData m_MonsterData => m_monsterData;
-
+    [HideInInspector]
     public NavMeshAgent m_monsterAgent;
-    [SerializeField]
+    [HideInInspector]
     public PlayerManager m_player;
 
     [HideInInspector]
@@ -46,17 +46,23 @@ public class MonsterController : FSM<MonsterController>, IClickable
     {
         m_monsterAgent.SetDestination(targetPos);
     }
-
+    public void Turn(Vector3 targetPos)
+    {
+        Vector3 dir = targetPos - transform.position;
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(dir), m_monsterAgent.angularSpeed);
+    }
     //범위 확인 기즈모
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, m_monsterData.m_sightRange);
+        Gizmos.DrawWireSphere(transform.position, m_monsterData.m_attackRange);
     }
     public void Click(PlayerManager player, Vector3 hitPos)
     {
         if (player == null)
             return;
-        //player.m_attack.m_attakAreas
+        
+        player.m_move.Set_Dest(hitPos);
     }
 }

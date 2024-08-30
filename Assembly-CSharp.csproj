@@ -76,7 +76,6 @@
     <Compile Include="Assets\1. Main\3. Scripts\Data\SkillData.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Monster\MonsterFSM\MonsterStateIdle.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Monster\MonsterFSM\MonsterStateDie.cs" />
-    <Compile Include="Assets\1. Main\3. Scripts\Monster\TestMonster.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Monster\MonsterController.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Data\MonsterData.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Monster\MonsterFSM\MonsterStateChase.cs" />
