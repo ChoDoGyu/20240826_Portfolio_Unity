@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class MonsterController : FSM<MonsterController>, IClickable
 {
@@ -18,11 +20,13 @@ public class MonsterController : FSM<MonsterController>, IClickable
 
     HPManager m_hpManager;
 
+    bool m_clicked = false;
+
     private void Awake()
     {
         m_monsterAgent = GetComponent<NavMeshAgent>();
         m_player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
-        InitState(this, MonsterStateIdle._Inst);
+        InitState(this, MonsterStateIdle.m_Inst);
         
         m_hpManager = GetComponent<HPManager>();
         m_hpManager.m_hp = m_monsterData.m_hp;
@@ -30,6 +34,15 @@ public class MonsterController : FSM<MonsterController>, IClickable
     void Update()
     {
         FSMUpdate();
+        if(m_clicked)
+        {
+            m_player.m_move.Set_Dest(this.transform.position);
+            if(CheckDistance(m_player.transform.position, m_player.m_attack.m_curAttackRange))
+            {
+                m_player.m_move.m_agent.isStopped = true;
+                m_clicked = false;
+            }
+        }
     }
     //플레이어와의 거리 체크
     public bool CheckDistance(Vector3 target, float distance)
@@ -62,7 +75,8 @@ public class MonsterController : FSM<MonsterController>, IClickable
     {
         if (player == null)
             return;
+        m_clicked = true;
+
         
-        player.m_move.Set_Dest(hitPos);
     }
 }

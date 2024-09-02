@@ -6,8 +6,8 @@ public class FSM<T> : MonoBehaviour
     private FSMState<T> m_currentState = null;    //현재 상태
     private FSMState<T> m_previousState = null;   //이전 상태
 
-    public FSMState<T> _CurrentState { get { return m_currentState; } }
-    public FSMState<T> _PreviousState { get { return m_previousState; } }
+    public FSMState<T> m_CurrentState { get { return m_currentState; } }
+    public FSMState<T> m_PreviousState { get { return m_previousState; } }
 
     //초기 상태와 상태 소유자 설정
     protected void InitState(T owner, FSMState<T> initialState)

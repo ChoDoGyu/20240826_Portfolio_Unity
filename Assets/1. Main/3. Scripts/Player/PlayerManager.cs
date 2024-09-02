@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlayerManager : MonoBehaviour
+public class PlayerManager : FSM<PlayerManager>
 {
     [HideInInspector]
     public PlayerMove m_move;
@@ -14,6 +15,7 @@ public class PlayerManager : MonoBehaviour
         m_move = GetComponent<PlayerMove>();
         m_attack = GetComponent<PlayerAttack>();
         m_camera = Camera.main;
+        InitState(this, PlayerStateIdle.m_Inst);
     }
     void Update()
     {
@@ -23,6 +25,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
+            m_move.m_agent.isStopped = false;
             RaycastHit hit;
             if (Physics.Raycast(m_camera.ScreenPointToRay(Input.mousePosition), out hit))
             {
@@ -31,10 +34,12 @@ public class PlayerManager : MonoBehaviour
                     iTmp.Click(this, hit.point);
                 }
             }
+            m_attack.UseSkill1();
             //if (EventSystem.current.IsPointerOverGameObject() == false)
             //{
 
             //}
         }
     }
+    
 }

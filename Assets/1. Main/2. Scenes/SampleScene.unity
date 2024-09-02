@@ -250,7 +250,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 240
@@ -401,6 +401,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cec34c3c253befc47ad19a5d6c74fc62, type: 2}
   - {fileID: 11400000, guid: 63521f3ba2ac42c4e9a9729013a9b6b7, type: 2}
   - {fileID: 11400000, guid: 708ac2cd7caa7ac43994870598b18c3a, type: 2}
+  m_curAttackRange: 0
 --- !u!1 &304497491
 GameObject:
   m_ObjectHideFlags: 3
@@ -921,7 +922,7 @@ Transform:
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
   m_LocalRotation: {x: 0.38268346, y: -0.00000013580316, z: 0.000000056251515, w: 0.92387956}
-  m_LocalPosition: {x: 1.7769222, y: 26.45834, z: -46.90339}
+  m_LocalPosition: {x: 1.7769222, y: 21.45834, z: -41.90339}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1229,7 +1230,7 @@ GameObject:
   - component: {fileID: 1547773987}
   m_Layer: 0
   m_Name: AttackArea
-  m_TagString: Untagged
+  m_TagString: PlayerAttackArea
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1262,7 +1263,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1547773986}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1379,7 +1380,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

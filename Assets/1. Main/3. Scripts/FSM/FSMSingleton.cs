@@ -5,7 +5,7 @@ public class FSMSingleton<T> : MonoBehaviour where T : MonoBehaviour
     private static T m_instance;
     private static object m_lock = new object();
 
-    public static T _Inst
+    public static T m_Inst
     {
         get
         {

@@ -24,6 +24,7 @@ public class PlayerAttack : MonoBehaviour
     public GameObject m_attackArea;
     [SerializeField, Header("스킬 데이터 리스트")]
     public List<SkillData> m_skillDataList = new List<SkillData>();
+    public float m_curAttackRange;
     void Awake()
     {
         
@@ -42,38 +43,41 @@ public class PlayerAttack : MonoBehaviour
         switch(m_curskill)
         {
             case SkillGroup.Skill1:
+                m_curAttackRange = m_skillDataList[0].m_attackRange;
                 m_attackArea.transform.localScale = new Vector3(1, 1, m_skillDataList[0].m_attackRange);
                 m_attackArea.transform.localPosition = new Vector3(0, 0, m_skillDataList[0].m_attackRange / 2);
                 break;
             case SkillGroup.Skill2:
+                m_curAttackRange = m_skillDataList[1].m_attackRange;
                 m_attackArea.transform.localScale = new Vector3(1, 1, m_skillDataList[1].m_attackRange);
                 m_attackArea.transform.localPosition = new Vector3(0, 0, m_skillDataList[1].m_attackRange / 2);
                 break;
             case SkillGroup.Skill3:
+                m_curAttackRange = m_skillDataList[2].m_attackRange;
                 m_attackArea.transform.localScale = new Vector3(1, 1, m_skillDataList[2].m_attackRange);
                 m_attackArea.transform.localPosition = new Vector3(0, 0, m_skillDataList[2].m_attackRange / 2);
                 break;
             case SkillGroup.Skill4:
+                m_curAttackRange = m_skillDataList[3].m_attackRange;
                 m_attackArea.transform.localScale = new Vector3(1, 1, m_skillDataList[3].m_attackRange);
                 m_attackArea.transform.localPosition = new Vector3(0, 0, m_skillDataList[3].m_attackRange / 2);
                 break;
 
             case SkillGroup.Skill5:
+                m_curAttackRange = m_skillDataList[4].m_attackRange;
                 m_attackArea.transform.localScale = new Vector3(1, 1, m_skillDataList[4].m_attackRange);
                 m_attackArea.transform.localPosition = new Vector3(0, 0, m_skillDataList[4].m_attackRange / 2);
                 break;
 
             case SkillGroup.Skill6:
+                m_curAttackRange = m_skillDataList[5].m_attackRange;
                 m_attackArea.transform.localScale = new Vector3(1, 1, m_skillDataList[5].m_attackRange);
                 m_attackArea.transform.localPosition = new Vector3(0, 0, m_skillDataList[5].m_attackRange / 2);
                 break;
         }
     }
-    void Attack()
+    public void UseSkill1()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-
-        }
+        m_curskill = SkillGroup.Skill1;
     }
 }
