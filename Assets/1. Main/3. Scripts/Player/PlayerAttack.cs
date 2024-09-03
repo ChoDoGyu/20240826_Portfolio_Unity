@@ -79,5 +79,6 @@ public class PlayerAttack : MonoBehaviour
     public void UseSkill1()
     {
         m_curskill = SkillGroup.Skill1;
+        print("Player Attack!!");
     }
 }

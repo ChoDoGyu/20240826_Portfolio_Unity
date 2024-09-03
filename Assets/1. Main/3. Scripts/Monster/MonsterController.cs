@@ -20,7 +20,7 @@ public class MonsterController : FSM<MonsterController>, IClickable
 
     HPManager m_hpManager;
 
-    bool m_clicked = false;
+    public bool m_clicked = false;
 
     private void Awake()
     {
@@ -37,9 +37,11 @@ public class MonsterController : FSM<MonsterController>, IClickable
         if(m_clicked)
         {
             m_player.m_move.Set_Dest(this.transform.position);
-            if(CheckDistance(m_player.transform.position, m_player.m_attack.m_curAttackRange))
+            if (CheckDistance(m_player.transform.position, m_player.m_attack.m_curAttackRange * 0.9f))
             {
-                m_player.m_move.m_agent.isStopped = true;
+                //m_player.m_move.m_agent.isStopped = true;
+                //m_player.m_move.Set_Dest(m_player.transform.position);
+                Debug.Log("플레이어 공격!!");
                 m_clicked = false;
             }
         }
@@ -77,6 +79,7 @@ public class MonsterController : FSM<MonsterController>, IClickable
             return;
         m_clicked = true;
 
-        
+        player.m_monsterController = this;
+        player.m_playerAttack = true;
     }
 }

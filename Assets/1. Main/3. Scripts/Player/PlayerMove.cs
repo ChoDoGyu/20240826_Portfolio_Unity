@@ -11,7 +11,7 @@ public class PlayerMove : MonoBehaviour
     private void Awake()
     {
         m_agent = GetComponent<NavMeshAgent>();
-        
+        //m_agent.updateRotation = false;
     }
     
     public void Set_Dest(Vector3 dest)
