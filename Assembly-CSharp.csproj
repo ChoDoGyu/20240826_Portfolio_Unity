@@ -80,6 +80,7 @@
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerFSM\PlayerStateIdle.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Monster\MonsterController.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerFSM\PlayerStateDamage.cs" />
+    <Compile Include="Assets\1. Main\3. Scripts\AttackAreaUnitFind.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Data\MonsterData.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Monster\MonsterFSM\MonsterStateChase.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Interface\IClickable.cs" />

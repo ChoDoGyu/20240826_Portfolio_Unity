@@ -37,13 +37,13 @@ public class MonsterController : FSM<MonsterController>, IClickable
         if(m_clicked)
         {
             m_player.m_move.Set_Dest(this.transform.position);
-            if (CheckDistance(m_player.transform.position, m_player.m_attack.m_curAttackRange * 0.9f))
-            {
-                //m_player.m_move.m_agent.isStopped = true;
-                //m_player.m_move.Set_Dest(m_player.transform.position);
-                Debug.Log("플레이어 공격!!");
-                m_clicked = false;
-            }
+            //if (CheckDistance(m_player.transform.position, m_player.m_attack.m_curAttackRange * 0.9f))
+            //{
+            //    m_player.m_move.m_agent.isStopped = true;
+            //    //m_player.m_move.Set_Dest(m_player.transform.position);
+            //    Debug.Log("플레이어 공격!!");
+            //    m_clicked = false;
+            //}
         }
     }
     //플레이어와의 거리 체크
@@ -80,6 +80,6 @@ public class MonsterController : FSM<MonsterController>, IClickable
         m_clicked = true;
 
         player.m_monsterController = this;
-        player.m_playerAttack = true;
+        //player.m_playerAttack = true;
     }
 }

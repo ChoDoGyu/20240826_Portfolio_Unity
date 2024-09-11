@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlayerManager : MonoBehaviour
+public class PlayerManager : FSM<MonsterController>
 {
     [HideInInspector]
     public PlayerMove m_move;
@@ -14,6 +14,8 @@ public class PlayerManager : MonoBehaviour
     public MonsterController m_monsterController;
     [HideInInspector]
     public bool m_playerAttack = false;
+    [SerializeField]
+    AttackAreaUnitFind m_attackAreaUnit;
     void Awake()
     {
         m_move = GetComponent<PlayerMove>();
@@ -22,6 +24,7 @@ public class PlayerManager : MonoBehaviour
     }
     void Update()
     {
+        FSMUpdate();
         MouseClick();
     }
     public bool CheckDistance(Vector3 target, float distance)
@@ -37,8 +40,7 @@ public class PlayerManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            //Vector3 pos = Input.mousePosition;
-            //transform.LookAt(pos);
+            
             m_move.m_agent.isStopped = false;
             RaycastHit hit;
             
@@ -55,15 +57,27 @@ public class PlayerManager : MonoBehaviour
             //}
             if (m_playerAttack)
             {
-                if (CheckDistance(m_monsterController.transform.position, m_attack.m_curAttackRange * 0.9f))
-                {
-                    //애니매이션을 넣으면 그 애니메이션에 넣으면 된다.
-                    m_attack.UseSkill1();
-                }
+                m_attack.UseSkill1();
+                m_move.m_agent.isStopped = true;
+                //m_move.m_agent.stoppingDistance = 10f;
             }
 
 
         }
     }
-    
+    public bool CheckEnermy(MonsterController enermy)
+    {
+        if (m_attackAreaUnit.m_unitList.Count > 0)
+        {
+            for (int i = 0; i < m_attackAreaUnit.m_unitList.Count; i++)
+            {
+                if (m_attackAreaUnit.m_unitList[i] = enermy.gameObject)
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
+        return false;
+    }
 }
