@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlayerManager : FSM<MonsterController>
+public class PlayerManager : FSM<PlayerManager>
 {
     [HideInInspector]
     public PlayerMove m_move;
@@ -12,15 +12,14 @@ public class PlayerManager : FSM<MonsterController>
     private Camera m_camera;
     [HideInInspector]//클릭한 몬스터 정보를 가져오기 위한 변수
     public MonsterController m_monsterController;
-    [HideInInspector]
-    public bool m_playerAttack = false;
-    [SerializeField]
+    [SerializeField, Header("공걱범위")]
     AttackAreaUnitFind m_attackAreaUnit;
     void Awake()
     {
         m_move = GetComponent<PlayerMove>();
         m_attack = GetComponent<PlayerAttack>();
         m_camera = Camera.main;
+        InitState(this, PlayerStateIdle.m_Inst);
     }
     void Update()
     {
@@ -55,27 +54,15 @@ public class PlayerManager : FSM<MonsterController>
             //{
 
             //}
-            if (m_playerAttack)
-            {
-                m_attack.UseSkill1();
-                m_move.m_agent.isStopped = true;
-                //m_move.m_agent.stoppingDistance = 10f;
-            }
-
-
         }
     }
     public bool CheckEnermy(MonsterController enermy)
     {
-        if (m_attackAreaUnit.m_unitList.Count > 0)
+        for (int i = 0; i < m_attackAreaUnit.m_unitList.Count; i++)
         {
-            for (int i = 0; i < m_attackAreaUnit.m_unitList.Count; i++)
+            if (m_attackAreaUnit.m_unitList[i] = enermy.gameObject)
             {
-                if (m_attackAreaUnit.m_unitList[i] = enermy.gameObject)
-                {
-                    return true;
-                }
-                return false;
+                return true;
             }
         }
         return false;
