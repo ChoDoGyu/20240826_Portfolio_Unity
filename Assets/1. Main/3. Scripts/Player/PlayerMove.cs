@@ -18,4 +18,9 @@ public class PlayerMove : MonoBehaviour
     {
         m_agent.SetDestination(dest);
     }
+    public void Turn(Vector3 targetPos)
+    {
+        Vector3 dir = targetPos - transform.position;
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(dir), m_agent.angularSpeed);
+    }
 }

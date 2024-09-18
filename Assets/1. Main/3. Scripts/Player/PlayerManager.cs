@@ -10,7 +10,7 @@ public class PlayerManager : FSM<PlayerManager>
     [HideInInspector]
     public PlayerAttack m_attack;
     private Camera m_camera;
-    [HideInInspector]//클릭한 몬스터 정보를 가져오기 위한 변수
+    //[HideInInspector]//클릭한 몬스터 정보를 가져오기 위한 변수
     public MonsterController m_monsterController;
     [SerializeField, Header("공걱범위")]
     AttackAreaUnitFind m_attackAreaUnit;
@@ -38,6 +38,7 @@ public class PlayerManager : FSM<PlayerManager>
             
             if (Physics.Raycast(m_camera.ScreenPointToRay(Input.mousePosition), out hit))
             {
+                
                 if (hit.collider.TryGetComponent<IClickable>(out IClickable iTmp))
                 {
                     iTmp.Click(this, hit.point);
@@ -70,4 +71,11 @@ public class PlayerManager : FSM<PlayerManager>
         }
         return false;
     }
+    //public void LookAtPos(RaycastHit hit)
+    //{
+    //    Vector3 desPos = new Vector3(hit.point.x, hit.point.y, hit.point.z);
+    //    Vector3 dir = desPos - transform.position;
+    //    Quaternion lookTarget = Quaternion.LookRotation(dir);
+
+    //}
 }

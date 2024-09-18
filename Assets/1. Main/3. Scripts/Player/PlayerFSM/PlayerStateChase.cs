@@ -11,7 +11,7 @@ public class PlayerStateChase : FSMSingleton<PlayerStateChase>, FSMState<PlayerM
     public void Execute(PlayerManager e)
     {
         e.m_move.Set_Dest(e.m_movePoint);
-        
+        e.m_move.Turn(e.m_movePoint);
         //if(Vector3.Distance(e.transform.position, e.m_movePoint) < 1f)
         //{
         //    e.ChangeState(PlayerStateIdle.m_Inst);
@@ -25,6 +25,5 @@ public class PlayerStateChase : FSMSingleton<PlayerStateChase>, FSMState<PlayerM
     {
         e.m_moveCheck = false;
         e.m_movePoint = Vector3.zero;
-        print("Out");
     }
 }

@@ -14,9 +14,13 @@ public class PlayerStateAttack : FSMSingleton<PlayerStateAttack>, FSMState<Playe
         {
             e.ChangeState(PlayerStateIdle.m_Inst);
         }
+        if (e.m_moveCheck)
+        {
+            e.ChangeState(PlayerStateChase.m_Inst);
+        }
     }
     public void Exit(PlayerManager e)
     {
-
+        //e.m_monsterController = null;
     }
 }
