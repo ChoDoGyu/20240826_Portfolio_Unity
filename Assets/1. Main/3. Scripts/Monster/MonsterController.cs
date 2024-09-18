@@ -1,9 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class MonsterController : FSM<MonsterController>, IClickable
 {
@@ -20,7 +18,6 @@ public class MonsterController : FSM<MonsterController>, IClickable
 
     HPManager m_hpManager;
 
-    public bool m_clicked = false;
 
     private void Awake()
     {
@@ -34,9 +31,12 @@ public class MonsterController : FSM<MonsterController>, IClickable
     void Update()
     {
         FSMUpdate();
-        if(m_clicked)
+        if(m_player.m_moveCheck)
         {
-            m_player.m_move.Set_Dest(this.transform.position);
+            m_player.m_movePoint = this.transform.position;
+
+            //m_player.m_move.Set_Dest(this.transform.position);
+
             //if (CheckDistance(m_player.transform.position, m_player.m_attack.m_curAttackRange * 0.9f))
             //{
             //    m_player.m_move.m_agent.isStopped = true;
@@ -77,9 +77,11 @@ public class MonsterController : FSM<MonsterController>, IClickable
     {
         if (player == null)
             return;
-        m_clicked = true;
 
         player.m_monsterController = this;
+
+        player.m_moveCheck = true;
+        
         //player.m_playerAttack = true;
     }
 }

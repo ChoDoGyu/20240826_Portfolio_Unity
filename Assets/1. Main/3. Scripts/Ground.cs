@@ -7,12 +7,10 @@ public class Ground : MonoBehaviour, IClickable
 {
     public void Click(PlayerManager player, Vector3 hitPos)
     {
-
-        
         if (player == null)
             return;
-
-        player.m_move.Set_Dest( hitPos);
-        
+        player.m_moveCheck = true;
+        player.m_movePoint = hitPos;
+        //player.m_move.Set_Dest( hitPos);
     }
 }

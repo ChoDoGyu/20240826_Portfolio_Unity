@@ -368,8 +368,9 @@ MonoBehaviour:
   m_move: {fileID: 0}
   m_attack: {fileID: 0}
   m_monsterController: {fileID: 0}
-  m_playerAttack: 0
   m_attackAreaUnit: {fileID: 1547773991}
+  m_moveCheck: 0
+  m_movePoint: {x: 0, y: 0, z: 0}
 --- !u!114 &25820862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -456,7 +457,6 @@ MonoBehaviour:
   m_monsterAgent: {fileID: 0}
   m_player: {fileID: 0}
   m_lastAttackTime: 0
-  m_clicked: 0
 --- !u!195 &37960426
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1858,7 +1858,6 @@ MonoBehaviour:
   m_monsterAgent: {fileID: 0}
   m_player: {fileID: 0}
   m_lastAttackTime: 0
-  m_clicked: 0
 --- !u!114 &1586089517
 MonoBehaviour:
   m_ObjectHideFlags: 0

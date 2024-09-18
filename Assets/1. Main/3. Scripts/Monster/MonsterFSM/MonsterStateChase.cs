@@ -19,6 +19,10 @@ public class MonsterStateChase : FSMSingleton<MonsterStateChase>, FSMState<Monst
                 e.ChangeState(MonsterStateAttack.m_Inst);
             }
         }
+        else
+        {
+            e.ChangeState(MonsterStateIdle.m_Inst);
+        }
     }
     public void Exit(MonsterController e)
     {

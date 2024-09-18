@@ -6,11 +6,14 @@ public class PlayerStateAttack : FSMSingleton<PlayerStateAttack>, FSMState<Playe
 {
     public void Enter(PlayerManager e)
     {
-
+        print("PlayerStateAttack");
     }
     public void Execute(PlayerManager e)
     {
-
+        if (!e.CheckEnermy(e.m_monsterController))
+        {
+            e.ChangeState(PlayerStateIdle.m_Inst);
+        }
     }
     public void Exit(PlayerManager e)
     {

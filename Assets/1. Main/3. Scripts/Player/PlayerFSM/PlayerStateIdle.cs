@@ -10,7 +10,10 @@ public class PlayerStateIdle : FSMSingleton<PlayerStateIdle>, FSMState<PlayerMan
     }
     public void Execute(PlayerManager e)
     {
-        
+        if(e.m_moveCheck)
+        {
+            e.ChangeState(PlayerStateChase.m_Inst);
+        }
     }
     public void Exit(PlayerManager e)
     {

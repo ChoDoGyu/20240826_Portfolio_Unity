@@ -31,7 +31,7 @@ public class PlayerAttack : MonoBehaviour
     }
     void Start()
     {
-        m_attackArea.SetActive(false);
+        //m_attackArea.SetActive(false);
 
     }
     void Update()

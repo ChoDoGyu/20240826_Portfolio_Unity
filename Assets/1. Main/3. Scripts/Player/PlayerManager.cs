@@ -14,6 +14,9 @@ public class PlayerManager : FSM<PlayerManager>
     public MonsterController m_monsterController;
     [SerializeField, Header("공걱범위")]
     AttackAreaUnitFind m_attackAreaUnit;
+    //FSM 변수
+    public bool m_moveCheck = false;
+    public Vector3 m_movePoint = Vector3.zero;
     void Awake()
     {
         m_move = GetComponent<PlayerMove>();
@@ -26,21 +29,11 @@ public class PlayerManager : FSM<PlayerManager>
         FSMUpdate();
         MouseClick();
     }
-    public bool CheckDistance(Vector3 target, float distance)
-    {
-        var dist = transform.position - target;
-        if (dist.sqrMagnitude <= Mathf.Pow(distance, 2f))
-        {
-            return true;
-        }
-        return false;
-    }
     void MouseClick()
     {
         if (Input.GetMouseButtonDown(0))
         {
             
-            m_move.m_agent.isStopped = false;
             RaycastHit hit;
             
             if (Physics.Raycast(m_camera.ScreenPointToRay(Input.mousePosition), out hit))
@@ -64,6 +57,16 @@ public class PlayerManager : FSM<PlayerManager>
             {
                 return true;
             }
+        }
+        return false;
+    }
+
+    public bool CheckDistance(Vector3 target, float distance)
+    {
+        var dist = transform.position - target;
+        if (dist.sqrMagnitude <= Mathf.Pow(distance, 2f))
+        {
+            return true;
         }
         return false;
     }

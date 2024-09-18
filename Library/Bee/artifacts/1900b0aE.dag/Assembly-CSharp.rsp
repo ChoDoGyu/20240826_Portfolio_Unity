@@ -386,6 +386,7 @@
 "Assets/1. Main/3. Scripts/Player/PlayerFSM/PlayerStateDamage.cs"
 "Assets/1. Main/3. Scripts/Player/PlayerFSM/PlayerStateDie.cs"
 "Assets/1. Main/3. Scripts/Player/PlayerFSM/PlayerStateIdle.cs"
+"Assets/1. Main/3. Scripts/Player/PlayerFSM/PlayerStateSkill.cs"
 "Assets/1. Main/3. Scripts/Player/PlayerManager.cs"
 "Assets/1. Main/3. Scripts/Player/PlayerMove.cs"
 -langversion:9.0

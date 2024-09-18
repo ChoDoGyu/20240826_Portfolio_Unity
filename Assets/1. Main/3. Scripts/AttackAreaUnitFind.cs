@@ -8,10 +8,11 @@ public class AttackAreaUnitFind : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Monster"))
+        if (other.CompareTag("Monster"))
         {
             m_unitList.Add(other.gameObject);
         }
+
     }
 
     void OnTriggerExit(Collider other)
@@ -20,10 +21,5 @@ public class AttackAreaUnitFind : MonoBehaviour
         {
             m_unitList.Remove(other.gameObject);
         }
-    }
-    private void Update()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawCube(transform.position, transform.localScale);
     }
 }
