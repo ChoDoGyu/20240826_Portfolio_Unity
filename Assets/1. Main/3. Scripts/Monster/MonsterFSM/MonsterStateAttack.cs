@@ -15,7 +15,7 @@ public class MonsterStateAttack : FSMSingleton<MonsterStateAttack>, FSMState<Mon
             if (Time.time > e.m_lastAttackTime + e.m_MonsterData.m_attackDelay)
             {
                 e.Turn(e.m_player.transform.position);
-                Debug.Log("Attack!!");
+                //Debug.Log("Attack!!");
                 e.m_lastAttackTime = Time.time;
             }
         }

@@ -10,7 +10,7 @@ public class Ground : MonoBehaviour, IClickable
         if (player == null)
             return;
         player.m_moveCheck = true;
-        player.m_movePoint = hitPos;
+        player.m_movePoint = new Vector3(hitPos.x, player.transform.position.y, hitPos.z);
         //player.m_move.Set_Dest( hitPos);
     }
 }

@@ -17,6 +17,8 @@ public class PlayerManager : FSM<PlayerManager>
     //FSM º¯¼ö
     public bool m_moveCheck = false;
     public Vector3 m_movePoint = Vector3.zero;
+
+    public bool m_attackCheck = false;
     void Awake()
     {
         m_move = GetComponent<PlayerMove>();

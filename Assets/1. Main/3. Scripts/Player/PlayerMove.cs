@@ -20,7 +20,7 @@ public class PlayerMove : MonoBehaviour
     }
     public void Turn(Vector3 targetPos)
     {
-        Vector3 dir = targetPos - transform.position;
+        Vector3 dir = new Vector3(targetPos.x - transform.position.x, 0, targetPos.z - transform.position.z);
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(dir), m_agent.angularSpeed);
     }
 }
