@@ -88,6 +88,8 @@
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerFSM\PlayerStateAttack.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\2.External\kenney_ui-pack-rpg-expansion\Spritesheet\uipack_rpg_sheet.xml" />
+    <None Include="Assets\2.External\kenney_ui-pack-rpg-expansion\license.txt" />
     <None Include="Assets\1. Main\3. Scripts\ToDo.txt" />
   </ItemGroup>
   <ItemGroup>
