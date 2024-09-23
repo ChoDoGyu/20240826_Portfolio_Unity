@@ -6,7 +6,8 @@ public class PlayerStateChase : FSMSingleton<PlayerStateChase>, FSMState<PlayerM
 {
     public void Enter(PlayerManager e)
     {
-        print("PlayerStateChase");        
+        print("PlayerStateChase");
+        e.m_move.m_agent.speed = e.m_moveSpeed;
     }
     public void Execute(PlayerManager e)
     {

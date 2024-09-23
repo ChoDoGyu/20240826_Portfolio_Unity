@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerManager : FSM<PlayerManager>
 {
@@ -10,7 +11,10 @@ public class PlayerManager : FSM<PlayerManager>
     [HideInInspector]
     public PlayerAttack m_attack;
     private Camera m_camera;
-    //[HideInInspector]//클릭한 몬스터 정보를 가져오기 위한 변수
+    public PlayerStaus m_playerStaus;
+
+
+    [HideInInspector]//클릭한 몬스터 정보를 가져오기 위한 변수
     public MonsterController m_monsterController;
     [SerializeField, Header("공걱범위")]
     AttackAreaUnitFind m_attackAreaUnit;
@@ -19,37 +23,54 @@ public class PlayerManager : FSM<PlayerManager>
     public Vector3 m_movePoint = Vector3.zero;
 
     public bool m_attackCheck = false;
+
+    #region 플레이어 스텟
+    [HideInInspector]
+    public int m_level;
+    [HideInInspector]
+    public int m_hp;
+    [HideInInspector]
+    public int m_damage;
+    [HideInInspector]
+    public int m_armor;
+    [HideInInspector]
+    public int m_moveSpeed;
+    [HideInInspector]
+    public int m_attackDelay;
+    [HideInInspector]
+    public float m_lastAttackTime = 0;
+    #endregion
     void Awake()
     {
         m_move = GetComponent<PlayerMove>();
         m_attack = GetComponent<PlayerAttack>();
+        m_playerStaus = GetComponent<PlayerStaus>();
         m_camera = Camera.main;
+
         InitState(this, PlayerStateIdle.m_Inst);
     }
     void Update()
     {
         FSMUpdate();
         MouseClick();
+        CurrentStaus();
     }
     void MouseClick()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            
-            RaycastHit hit;
-            
-            if (Physics.Raycast(m_camera.ScreenPointToRay(Input.mousePosition), out hit))
+            if (EventSystem.current.IsPointerOverGameObject() == false)
             {
-                
-                if (hit.collider.TryGetComponent<IClickable>(out IClickable iTmp))
+                RaycastHit hit;
+                if (Physics.Raycast(m_camera.ScreenPointToRay(Input.mousePosition), out hit))
                 {
-                    iTmp.Click(this, hit.point);
+
+                    if (hit.collider.TryGetComponent<IClickable>(out IClickable iTmp))
+                    {
+                        iTmp.Click(this, hit.point);
+                    }
                 }
             }
-            //if (EventSystem.current.IsPointerOverGameObject() == false)
-            //{
-
-            //}
         }
     }
     public bool CheckEnermy(MonsterController enermy)
@@ -73,11 +94,13 @@ public class PlayerManager : FSM<PlayerManager>
         }
         return false;
     }
-    //public void LookAtPos(RaycastHit hit)
-    //{
-    //    Vector3 desPos = new Vector3(hit.point.x, hit.point.y, hit.point.z);
-    //    Vector3 dir = desPos - transform.position;
-    //    Quaternion lookTarget = Quaternion.LookRotation(dir);
-
-    //}
+    void CurrentStaus()
+    {
+        //m_level = m_playerStaus.m_level;
+        m_hp = m_playerStaus.m_hp;
+        m_damage = m_playerStaus.m_damage;
+        m_armor = m_playerStaus.m_armor;
+        m_moveSpeed = m_playerStaus.m_moveSpeed;
+        m_attackDelay = m_playerStaus.m_attackDelay;
+    }
 }

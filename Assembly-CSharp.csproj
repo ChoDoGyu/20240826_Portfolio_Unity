@@ -60,6 +60,7 @@
     <Analyzer Include="D:\Unity\2022.3.32f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerStaus.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Monster\MonsterFSM\MonsterStateDamage.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Manager\HPManager.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Monster\MonsterFSM\MonsterStateAttack.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerFSM\PlayerStateChase.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerMove.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Data\PlayerData.cs" />
+    <Compile Include="Assets\1. Main\3. Scripts\Data\ItemData.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\CSVtoScriptableObject\SCVtoSO.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerManager.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Ground.cs" />
