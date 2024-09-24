@@ -6,13 +6,15 @@ using UnityEngine.EventSystems;
 
 public class PlayerManager : FSM<PlayerManager>
 {
+    #region 컴포넌트 불러오기
     [HideInInspector]
     public PlayerMove m_move;
     [HideInInspector]
     public PlayerAttack m_attack;
     private Camera m_camera;
     public PlayerStaus m_playerStaus;
-
+    public HPManager m_hpManager;
+    #endregion
 
     [HideInInspector]//클릭한 몬스터 정보를 가져오기 위한 변수
     public MonsterController m_monsterController;
@@ -26,17 +28,15 @@ public class PlayerManager : FSM<PlayerManager>
 
     #region 플레이어 스텟
     [HideInInspector]
-    public int m_level;
+    public int m_playerLevel;
     [HideInInspector]
-    public int m_hp;
+    public int m_playerAttackPoint;
     [HideInInspector]
-    public int m_damage;
+    public int m_PlayerArmorPoint;
     [HideInInspector]
-    public int m_armor;
+    public int m_PlayerMoveSpeed;
     [HideInInspector]
-    public int m_moveSpeed;
-    [HideInInspector]
-    public int m_attackDelay;
+    public int m_playerAttackDelay;
     [HideInInspector]
     public float m_lastAttackTime = 0;
     #endregion
@@ -45,15 +45,19 @@ public class PlayerManager : FSM<PlayerManager>
         m_move = GetComponent<PlayerMove>();
         m_attack = GetComponent<PlayerAttack>();
         m_playerStaus = GetComponent<PlayerStaus>();
+        m_hpManager = GetComponent<HPManager>();
         m_camera = Camera.main;
 
         InitState(this, PlayerStateIdle.m_Inst);
+    }
+    void Start()
+    {
+        StartStaus();
     }
     void Update()
     {
         FSMUpdate();
         MouseClick();
-        CurrentStaus();
     }
     void MouseClick()
     {
@@ -77,7 +81,7 @@ public class PlayerManager : FSM<PlayerManager>
     {
         for (int i = 0; i < m_attackAreaUnit.m_unitList.Count; i++)
         {
-            if (m_attackAreaUnit.m_unitList[i] = enermy.gameObject)
+            if (m_attackAreaUnit.m_unitList[i] = enermy)
             {
                 return true;
             }
@@ -94,13 +98,13 @@ public class PlayerManager : FSM<PlayerManager>
         }
         return false;
     }
-    void CurrentStaus()
+    void StartStaus()
     {
-        //m_level = m_playerStaus.m_level;
-        m_hp = m_playerStaus.m_hp;
-        m_damage = m_playerStaus.m_damage;
-        m_armor = m_playerStaus.m_armor;
-        m_moveSpeed = m_playerStaus.m_moveSpeed;
-        m_attackDelay = m_playerStaus.m_attackDelay;
+        //m_playerLevel = m_playerStaus.m_level;
+        m_hpManager.m_hp = m_playerStaus.m_hp;
+        m_playerAttackPoint = m_playerStaus.m_damage;
+        m_PlayerArmorPoint = m_playerStaus.m_armor;
+        m_PlayerMoveSpeed = m_playerStaus.m_moveSpeed;
+        m_playerAttackDelay = m_playerStaus.m_attackDelay;
     }
 }

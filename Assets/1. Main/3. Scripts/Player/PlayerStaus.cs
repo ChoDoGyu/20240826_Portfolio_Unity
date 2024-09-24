@@ -20,6 +20,15 @@ public class PlayerStaus : MonoBehaviour
     [SerializeField]
     public int m_attackDelay;
 
+    void Awake()
+    {
+        HpStaus();
+        DamageStaus();
+        ArmorStaus();
+        MoveSpeedStaus();
+        AttackSpeedStaus();
+    }
+
     void Update()
     {
         HpStaus();
