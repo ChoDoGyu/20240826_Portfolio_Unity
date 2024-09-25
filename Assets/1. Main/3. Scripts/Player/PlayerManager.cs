@@ -19,7 +19,7 @@ public class PlayerManager : FSM<PlayerManager>
     [HideInInspector]//클릭한 몬스터 정보를 가져오기 위한 변수
     public MonsterController m_monsterController;
     [SerializeField, Header("공걱범위")]
-    AttackAreaUnitFind m_attackAreaUnit;
+    public AttackAreaUnitFind m_attackAreaUnit;
     //FSM 변수
     public bool m_moveCheck = false;
     public Vector3 m_movePoint = Vector3.zero;
@@ -30,13 +30,13 @@ public class PlayerManager : FSM<PlayerManager>
     [HideInInspector]
     public int m_playerLevel;
     [HideInInspector]
-    public int m_playerAttackPoint;
+    public float m_playerAttackPoint;
     [HideInInspector]
-    public int m_PlayerArmorPoint;
+    public float m_PlayerArmorPoint;
     [HideInInspector]
-    public int m_PlayerMoveSpeed;
+    public float m_PlayerMoveSpeed;
     [HideInInspector]
-    public int m_playerAttackDelay;
+    public float m_playerAttackDelay;
     [HideInInspector]
     public float m_lastAttackTime = 0;
     #endregion
@@ -58,6 +58,7 @@ public class PlayerManager : FSM<PlayerManager>
     {
         FSMUpdate();
         MouseClick();
+        ChangeStaus();
     }
     void MouseClick()
     {
@@ -106,5 +107,9 @@ public class PlayerManager : FSM<PlayerManager>
         m_PlayerArmorPoint = m_playerStaus.m_armor;
         m_PlayerMoveSpeed = m_playerStaus.m_moveSpeed;
         m_playerAttackDelay = m_playerStaus.m_attackDelay;
+    }
+    void ChangeStaus()
+    {
+        m_playerAttackPoint = m_playerStaus.m_damage + m_attack.m_curAttackPoint;
     }
 }

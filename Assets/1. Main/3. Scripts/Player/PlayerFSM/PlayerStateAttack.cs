@@ -17,7 +17,6 @@ public class PlayerStateAttack : FSMSingleton<PlayerStateAttack>, FSMState<Playe
         if (!e.CheckEnermy(e.m_monsterController))
         {
             e.ChangeState(PlayerStateIdle.m_Inst);
-            
         }
         else
         {
@@ -25,6 +24,12 @@ public class PlayerStateAttack : FSMSingleton<PlayerStateAttack>, FSMState<Playe
             if (Time.time > e.m_lastAttackTime + e.m_playerAttackDelay)
             {
                 print("playerAttack!!");
+                for(int i = 0; i < e.m_attackAreaUnit.m_unitList.Count; i++)
+                {
+                    e.m_attackAreaUnit.m_unitList[i].m_hpManager.ReduceHp(e.m_playerAttackPoint);
+                    e.m_attackAreaUnit.m_unitList[i].ChangeState(MonsterStateDamage.m_Inst);
+                }
+                
                 e.m_lastAttackTime = Time.time;
             }
         }

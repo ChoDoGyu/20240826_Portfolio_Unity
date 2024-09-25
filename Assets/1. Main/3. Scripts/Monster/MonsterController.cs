@@ -16,7 +16,7 @@ public class MonsterController : FSM<MonsterController>, IClickable
     [HideInInspector]
     public float m_lastAttackTime = 0;
 
-    HPManager m_hpManager;
+    public HPManager m_hpManager;
 
     public bool m_clicked = false;
 

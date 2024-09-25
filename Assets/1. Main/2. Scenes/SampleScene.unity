@@ -1280,10 +1280,10 @@ MonoBehaviour:
   m_curskill: 0
   m_attackArea: {fileID: 0}
   m_skillDataList:
-  - {fileID: 11400000, guid: 85e839e876b30c940b3619f9686e7a7b, type: 2}
-  - {fileID: 11400000, guid: 41c8081176c79f1428e6b262572459b6, type: 2}
-  - {fileID: 11400000, guid: 1e6346d4ea3597b4e8d8665efd83f576, type: 2}
-  - {fileID: 11400000, guid: cec34c3c253befc47ad19a5d6c74fc62, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 11400000, guid: 63521f3ba2ac42c4e9a9729013a9b6b7, type: 2}
   - {fileID: 11400000, guid: 708ac2cd7caa7ac43994870598b18c3a, type: 2}
   m_curAttackRange: 0

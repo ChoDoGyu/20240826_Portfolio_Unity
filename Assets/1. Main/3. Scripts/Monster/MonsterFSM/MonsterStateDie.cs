@@ -6,7 +6,7 @@ public class MonsterStateDie : FSMSingleton<MonsterStateDie>, FSMState<MonsterCo
 {
     public void Enter(MonsterController e)
     {
-        
+        print("몬스터 죽는다");
     }
     public void Execute(MonsterController e)
     {

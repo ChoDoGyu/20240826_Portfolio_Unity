@@ -22,7 +22,10 @@ public class PlayerAttack : MonoBehaviour
     public GameObject m_attackArea;
     [SerializeField, Header("스킬 데이터 리스트")]
     public List<SkillData> m_skillDataList = new List<SkillData>();
+
     public float m_curAttackRange;
+    public float m_curAttackPoint;
+    
     void Awake()
     {
         
@@ -43,33 +46,32 @@ public class PlayerAttack : MonoBehaviour
                 m_curAttackRange = m_skillDataList[0].m_attackRange;
                 m_attackArea.transform.localScale = new Vector3(1, 1, m_skillDataList[0].m_attackRange);
                 m_attackArea.transform.localPosition = new Vector3(0, 0, m_skillDataList[0].m_attackRange / 2);
+                m_curAttackPoint = m_skillDataList[0].m_skillDamage;
                 break;
             case SkillGroup.Skill1:
                 m_curAttackRange = m_skillDataList[1].m_attackRange;
                 m_attackArea.transform.localScale = new Vector3(1, 1, m_skillDataList[1].m_attackRange);
                 m_attackArea.transform.localPosition = new Vector3(0, 0, m_skillDataList[1].m_attackRange / 2);
+                m_curAttackPoint = m_skillDataList[1].m_skillDamage;
                 break;
             case SkillGroup.Skill2:
                 m_curAttackRange = m_skillDataList[2].m_attackRange;
                 m_attackArea.transform.localScale = new Vector3(1, 1, m_skillDataList[2].m_attackRange);
                 m_attackArea.transform.localPosition = new Vector3(0, 0, m_skillDataList[2].m_attackRange / 2);
+                m_curAttackPoint = m_skillDataList[2].m_skillDamage;
                 break;
             case SkillGroup.Skill3:
                 m_curAttackRange = m_skillDataList[3].m_attackRange;
                 m_attackArea.transform.localScale = new Vector3(1, 1, m_skillDataList[3].m_attackRange);
                 m_attackArea.transform.localPosition = new Vector3(0, 0, m_skillDataList[3].m_attackRange / 2);
+                m_curAttackPoint = m_skillDataList[3].m_skillDamage;
                 break;
 
         }
     }
-    public void UseSkill1()
+    public void UseSkill0()
     {
-        m_curskill = SkillGroup.Skill1;
+        m_curskill = SkillGroup.Skill0;
     }
-    IEnumerator Coroutine_OnOff(GameObject obj)
-    {
-        obj.SetActive(false);
-        yield return null;
-        obj.SetActive(true);
-    }
+    
 }
