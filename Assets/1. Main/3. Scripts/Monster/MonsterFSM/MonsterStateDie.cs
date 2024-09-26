@@ -10,7 +10,9 @@ public class MonsterStateDie : FSMSingleton<MonsterStateDie>, FSMState<MonsterCo
     }
     public void Execute(MonsterController e)
     {
-
+        //누워서 아래로 가라앉는 애니메이션
+        print("누워서 아래로 가라앉는 애니메이션");
+        Destroy(e, 2);
     }
     public void Exit(MonsterController e)
     {

@@ -416,6 +416,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1e6346d4ea3597b4e8d8665efd83f576, type: 2}
   - {fileID: 11400000, guid: cec34c3c253befc47ad19a5d6c74fc62, type: 2}
   m_curAttackRange: 0
+  m_curAttackPoint: 0
 --- !u!54 &25820864
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -475,6 +476,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_hp: 0
+  m_reduceHpCheck: 0
+  m_increaseHpCheck: 0
 --- !u!1 &37960423
 GameObject:
   m_ObjectHideFlags: 0
@@ -497,7 +500,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &37960424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -511,6 +514,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_hp: 0
+  m_reduceHpCheck: 0
+  m_increaseHpCheck: 0
 --- !u!114 &37960425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,6 +532,7 @@ MonoBehaviour:
   m_monsterAgent: {fileID: 0}
   m_player: {fileID: 0}
   m_lastAttackTime: 0
+  m_hpManager: {fileID: 0}
   m_clicked: 0
 --- !u!195 &37960426
 NavMeshAgent:
@@ -1287,6 +1293,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 63521f3ba2ac42c4e9a9729013a9b6b7, type: 2}
   - {fileID: 11400000, guid: 708ac2cd7caa7ac43994870598b18c3a, type: 2}
   m_curAttackRange: 0
+  m_curAttackPoint: 0
 --- !u!114 &551197206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3527,6 +3534,7 @@ MonoBehaviour:
   m_monsterAgent: {fileID: 0}
   m_player: {fileID: 0}
   m_lastAttackTime: 0
+  m_hpManager: {fileID: 0}
   m_clicked: 0
 --- !u!114 &1586089517
 MonoBehaviour:
@@ -3541,6 +3549,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_hp: 0
+  m_reduceHpCheck: 0
+  m_increaseHpCheck: 0
 --- !u!54 &1586089518
 Rigidbody:
   m_ObjectHideFlags: 0
