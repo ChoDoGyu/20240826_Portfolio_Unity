@@ -16,7 +16,7 @@ public class PlayerManager : FSM<PlayerManager>
     public HPManager m_hpManager;
     #endregion
 
-    [HideInInspector]//클릭한 몬스터 정보를 가져오기 위한 변수
+    //[HideInInspector]//클릭한 몬스터 정보를 가져오기 위한 변수
     public MonsterController m_monsterController;
     [SerializeField, Header("공걱범위")]
     public AttackAreaUnitFind m_attackAreaUnit;
@@ -82,7 +82,11 @@ public class PlayerManager : FSM<PlayerManager>
     {
         for (int i = 0; i < m_attackAreaUnit.m_unitList.Count; i++)
         {
-            if (m_attackAreaUnit.m_unitList[i] = enermy)
+            //if (m_attackAreaUnit.m_unitList[i] = enermy.gameObject)
+            //{
+            //    return true;
+            //}
+            if (m_attackAreaUnit.m_unitList[i] == enermy)
             {
                 return true;
             }

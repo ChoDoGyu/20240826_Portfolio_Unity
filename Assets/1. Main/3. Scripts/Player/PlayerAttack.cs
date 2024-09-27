@@ -44,25 +44,25 @@ public class PlayerAttack : MonoBehaviour
         {
             case SkillGroup.Skill0:
                 m_curAttackRange = m_skillDataList[0].m_attackRange;
-                m_attackArea.transform.localScale = new Vector3(1, 1, m_skillDataList[0].m_attackRange);
+                m_attackArea.transform.localScale = new Vector3(3, 2, m_skillDataList[0].m_attackRange);
                 m_attackArea.transform.localPosition = new Vector3(0, 0, m_skillDataList[0].m_attackRange / 2);
                 m_curAttackPoint = m_skillDataList[0].m_skillDamage;
                 break;
             case SkillGroup.Skill1:
                 m_curAttackRange = m_skillDataList[1].m_attackRange;
-                m_attackArea.transform.localScale = new Vector3(1, 1, m_skillDataList[1].m_attackRange);
+                m_attackArea.transform.localScale = new Vector3(3, 2, m_skillDataList[1].m_attackRange);
                 m_attackArea.transform.localPosition = new Vector3(0, 0, m_skillDataList[1].m_attackRange / 2);
                 m_curAttackPoint = m_skillDataList[1].m_skillDamage;
                 break;
             case SkillGroup.Skill2:
                 m_curAttackRange = m_skillDataList[2].m_attackRange;
-                m_attackArea.transform.localScale = new Vector3(1, 1, m_skillDataList[2].m_attackRange);
+                m_attackArea.transform.localScale = new Vector3(3, 2, m_skillDataList[2].m_attackRange);
                 m_attackArea.transform.localPosition = new Vector3(0, 0, m_skillDataList[2].m_attackRange / 2);
                 m_curAttackPoint = m_skillDataList[2].m_skillDamage;
                 break;
             case SkillGroup.Skill3:
                 m_curAttackRange = m_skillDataList[3].m_attackRange;
-                m_attackArea.transform.localScale = new Vector3(1, 1, m_skillDataList[3].m_attackRange);
+                m_attackArea.transform.localScale = new Vector3(3, 2, m_skillDataList[3].m_attackRange);
                 m_attackArea.transform.localPosition = new Vector3(0, 0, m_skillDataList[3].m_attackRange / 2);
                 m_curAttackPoint = m_skillDataList[3].m_skillDamage;
                 break;

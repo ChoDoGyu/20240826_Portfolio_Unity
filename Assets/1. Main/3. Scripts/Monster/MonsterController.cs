@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class MonsterController : FSM<MonsterController>, IClickable
 {
@@ -20,6 +21,11 @@ public class MonsterController : FSM<MonsterController>, IClickable
 
     public bool m_clicked = false;
 
+    [SerializeField]
+    public Slider m_slider;
+    Camera m_Camera;
+
+    public bool m_isDie = false;
 
     private void Awake()
     {
@@ -29,6 +35,13 @@ public class MonsterController : FSM<MonsterController>, IClickable
         
         m_hpManager = GetComponent<HPManager>();
         m_hpManager.m_hp = m_monsterData.m_hp;
+
+        m_Camera = Camera.main;
+    }
+    private void Start()
+    {
+        m_slider.maxValue = m_hpManager.m_hp;
+        m_slider.value = m_hpManager.m_hp;
     }
     void Update()
     {
@@ -40,16 +53,9 @@ public class MonsterController : FSM<MonsterController>, IClickable
             {
                 m_clicked = false;
             }
-            //m_player.m_move.Set_Dest(this.transform.position);
-
-            //if (CheckDistance(m_player.transform.position, m_player.m_attack.m_curAttackRange * 0.9f))
-            //{
-            //    m_player.m_move.m_agent.isStopped = true;
-            //    //m_player.m_move.Set_Dest(m_player.transform.position);
-            //    Debug.Log("플레이어 공격!!");
-            //    m_clicked = false;
-            //}
         }
+        m_slider.value = m_hpManager.m_hp;
+        m_slider.transform.LookAt(m_Camera.transform.position);
     }
     //플레이어와의 거리 체크
     public bool CheckDistance(Vector3 target, float distance)
