@@ -23,6 +23,7 @@ public class MonsterStateChase : FSMSingleton<MonsterStateChase>, FSMState<Monst
         {
             e.ChangeState(MonsterStateIdle.m_Inst);
         }
+        
     }
     public void Exit(MonsterController e)
     {

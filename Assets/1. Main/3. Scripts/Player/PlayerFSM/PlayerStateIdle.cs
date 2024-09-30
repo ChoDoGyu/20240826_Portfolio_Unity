@@ -15,9 +15,9 @@ public class PlayerStateIdle : FSMSingleton<PlayerStateIdle>, FSMState<PlayerMan
             
             e.ChangeState(PlayerStateChase.m_Inst);
         }
-        else
+        if(e.m_attackCheck)
         {
-            
+            e.ChangeState(PlayerStateAttack.m_Inst);
         }
         
     }

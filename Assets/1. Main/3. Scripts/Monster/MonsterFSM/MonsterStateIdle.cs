@@ -13,6 +13,8 @@ public class MonsterStateIdle : FSMSingleton<MonsterStateIdle>,FSMState<MonsterC
     {
         if (e.m_player.transform != null)
         {
+            //Debug.Break();
+
             if (e.CheckDistance(e.m_player.transform.position, e.m_MonsterData.m_sightRange))
             {
                 e.ChangeState(MonsterStateChase.m_Inst);

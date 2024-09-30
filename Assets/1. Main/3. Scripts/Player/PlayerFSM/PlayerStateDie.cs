@@ -6,11 +6,12 @@ public class PlayerStateDie : FSMSingleton<PlayerStateDie>, FSMState<PlayerManag
 {
     public void Enter(PlayerManager e)
     {
-
+        print("플레이어 죽었다.");
+        e.gameObject.SetActive(false);
     }
     public void Execute(PlayerManager e)
     {
-
+        
     }
     public void Exit(PlayerManager e)
     {

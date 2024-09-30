@@ -11,7 +11,7 @@ public class MonsterController : FSM<MonsterController>, IClickable
     public MonsterData m_MonsterData => m_monsterData;
     [HideInInspector]
     public NavMeshAgent m_monsterAgent;
-    [HideInInspector]
+    //[HideInInspector]
     public PlayerManager m_player;
 
     [HideInInspector]
@@ -27,6 +27,10 @@ public class MonsterController : FSM<MonsterController>, IClickable
 
     public bool m_isDie = false;
 
+    //[HideInInspector]//시작 위치
+    public Vector3 m_startPos;
+    
+
     private void Awake()
     {
         m_monsterAgent = GetComponent<NavMeshAgent>();
@@ -37,6 +41,11 @@ public class MonsterController : FSM<MonsterController>, IClickable
         m_hpManager.m_hp = m_monsterData.m_hp;
 
         m_Camera = Camera.main;
+
+        //태어난 위치 저장 - 추격 범위를 위해
+        m_startPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        //GameObject tmp = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        //tmp.transform.position = m_startPos;
     }
     private void Start()
     {
@@ -54,8 +63,16 @@ public class MonsterController : FSM<MonsterController>, IClickable
                 m_clicked = false;
             }
         }
+        //체력바
         m_slider.value = m_hpManager.m_hp;
         m_slider.transform.LookAt(m_Camera.transform.position);
+
+        //추격 거리 설정
+        if (!CheckDistance(m_startPos, m_MonsterData.m_sightRange * 2))
+        {
+            ChangeState(MonsterStateReset.m_Inst);
+        }
+
     }
     //플레이어와의 거리 체크
     public bool CheckDistance(Vector3 target, float distance)

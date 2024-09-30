@@ -16,5 +16,5 @@ MonoBehaviour:
   m_hp: 200
   m_damage: 2
   m_sightRange: 12
-  m_attackRange: 1.2
+  m_attackRange: 5.2
   m_attackDelay: 1.2

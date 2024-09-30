@@ -16,6 +16,8 @@ public class MonsterStateAttack : FSMSingleton<MonsterStateAttack>, FSMState<Mon
             {
                 e.Turn(e.m_player.transform.position);
                 Debug.Log("Monster Attack!!");
+                e.m_player.m_hpManager.ReduceHp(e.m_MonsterData.m_damage);
+                e.m_player.ChangeState(PlayerStateDamage.m_Inst);
                 e.m_lastAttackTime = Time.time;
             }
         }
