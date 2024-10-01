@@ -12,12 +12,13 @@ public class MonsterStateDie : FSMSingleton<MonsterStateDie>, FSMState<MonsterCo
         Destroy(e.gameObject, 2f);
         //e.m_player.m_attackAreaUnit.m_unitList.Remove(e.gameObject);
         e.m_player.m_attackAreaUnit.m_unitList.Remove(e);
-        
+        e.m_isDie = true;
+
     }
     public void Execute(MonsterController e)
     {
         //누워서 아래로 가라앉는 애니메이션
-        e.m_isDie = true;
+        
 
     }
     public void Exit(MonsterController e)

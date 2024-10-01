@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -15,6 +16,14 @@ public class MonsterSpawnManager : MonoBehaviour
 
     SpawnAreaManager m_spawnAreaManager;
 
+    [SerializeField, Header("스폰지역마다 소환 숫자")]
+    int m_maxMonsterNumber = 3;
+
+    [SerializeField, Header("소환 쿨타임")]
+    float m_spawnTime = 30f;
+    [SerializeField]
+    private float m_spawnLastTime = 0f;
+
     private void Awake()
     {
         m_spawnAreaManager = GetComponent<SpawnAreaManager>();
@@ -24,41 +33,81 @@ public class MonsterSpawnManager : MonoBehaviour
         SpawnInPoints();
         //SpawnInOnePoint();
     }
-    void CreateMonster(Transform point, int monsterNumber)
+    private void Update()
     {
-        var obj = Instantiate(m_monsterList[monsterNumber]);
-        obj.transform.SetParent(transform, false);
-        //obj.transform.SetParent(m_spawnAreaManager.m_spawnAreaList[], false);
-        if (RandomPoint(point.position, m_range, out m_point))
+        if (Time.time > m_spawnLastTime + m_spawnTime)
         {
-            obj.transform.position = m_point;
+            SpawnInPoints();
+            m_spawnLastTime = Time.time;
         }
+    }
+    GameObject CreateMonster(Transform point, int monsterNumber)
+    {
+        float xRandom = Random.Range(-2f, 2f);
+        float zRandom = Random.Range(-2f, 2f);
+        Vector3 randomPos = new Vector3(xRandom, 0, zRandom);
+        GameObject obj = Instantiate(m_monsterList[monsterNumber]);
+        obj.transform.position = point.position + randomPos;
+        //obj.transform.SetParent(transform, false);
+        //if (RandomPoint(point.position, m_range, out m_point))
+        //{
+        //    
+        //}
         //obj.transform.position = m_monsterList[monsterNumber].transform.position;
-        
+        return obj;
     }
-    bool RandomPoint(Vector3 center, float range, out Vector3 result)
-    {
-        NavMeshHit hit;
-        for (int i = 0; i < 30; i++)
-        {
-            Vector3 randomPoint = center + Random.insideUnitSphere * range;
+    //bool RandomPoint(Vector3 center, float range, out Vector3 result)
+    //{
+    //    NavMeshHit hit;
+    //    for (int i = 0; i < 30; i++)
+    //    {
+    //        Vector3 randomPoint = center + Random.insideUnitSphere * range;
             
-            if(NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas))
-            {
-                
-                result = hit.position;
-                return true;
-            }
-        }
-        result = Vector3.zero;
-        return false;
-    }
+    //        if(NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas))
+    //        {
+    //            result = hit.position;
+    //            return true;
+    //        }
+    //    }
+    //    result = Vector3.zero;
+    //    return false;
+    //}
+
+    //IEnumerator Coroutine_RandomPoint(Vector3 center, float range)
+    //{
+    //    NavMeshHit hit;
+    //    do
+    //    {
+    //        Vector3 randomPoint = center + Random.insideUnitSphere * range;
+
+    //        if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas))
+    //        {
+    //            hit.hit = true;
+    //            m_point = hit.position;
+    //        }
+    //        else
+    //        {
+    //            m_point = Vector3.zero;
+    //            hit.hit = false;
+    //        }
+    //    } while (!hit.hit);
+        
+    //    yield return null;
+    //}
+    
     void SpawnInPoints()
     {
         for(int i = 0; i < m_spawnAreaManager.m_spawnAreaList.Count; i++)
         {
-            int number = Random.Range(0, m_monsterList.Count);
-            CreateMonster(m_spawnAreaManager.m_spawnAreaList[i], number);
+            SpawnMonsterList spawnMonsterList = m_spawnAreaManager.m_spawnAreaList[i].GetComponent<SpawnMonsterList>();
+            while(!(spawnMonsterList.m_monsterList.Count == 3))
+            {
+                int number = Random.Range(0, m_monsterList.Count);
+                GameObject obj = CreateMonster(m_spawnAreaManager.m_spawnAreaList[i], number);
+                MonsterController controller = obj.GetComponent<MonsterController>();
+                controller.m_startPos = obj.transform.position;
+                spawnMonsterList.m_monsterList.Add(obj);
+            }
         }
     }
     void SpawnInOnePoint()
@@ -67,4 +116,5 @@ public class MonsterSpawnManager : MonoBehaviour
         int spawnNumber = Random.Range(0, m_spawnAreaManager.m_spawnAreaList.Count);
         CreateMonster(m_spawnAreaManager.m_spawnAreaList[spawnNumber], monsterNumber);
     }
+
 }

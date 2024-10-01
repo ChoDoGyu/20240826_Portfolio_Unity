@@ -43,7 +43,7 @@ public class MonsterController : FSM<MonsterController>, IClickable
         m_Camera = Camera.main;
 
         //태어난 위치 저장 - 추격 범위를 위해
-        m_startPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        //m_startPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         //GameObject tmp = GameObject.CreatePrimitive(PrimitiveType.Cube);
         //tmp.transform.position = m_startPos;
     }
