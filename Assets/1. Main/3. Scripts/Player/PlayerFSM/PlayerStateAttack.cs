@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static PlayerAttack;
 
 public class PlayerStateAttack : FSMSingleton<PlayerStateAttack>, FSMState<PlayerManager>
 {
@@ -23,6 +24,7 @@ public class PlayerStateAttack : FSMSingleton<PlayerStateAttack>, FSMState<Playe
             if (e.m_attackAreaUnit.m_unitList.Count > 0)
             {
                 e.m_move.Turn(e.m_monsterController.transform.position);
+                
                 if (Time.time > e.m_lastAttackTime + e.m_playerAttackDelay)
                 {
                     print("playerAttack!!");

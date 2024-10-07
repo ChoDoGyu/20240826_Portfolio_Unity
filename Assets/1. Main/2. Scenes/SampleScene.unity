@@ -2968,6 +2968,7 @@ MonoBehaviour:
   m_maxMonsterNumber: 3
   m_spawnTime: 30
   m_spawnLastTime: 0
+  m_spawnNumbers: 3
 --- !u!1 &1129233513
 GameObject:
   m_ObjectHideFlags: 0
