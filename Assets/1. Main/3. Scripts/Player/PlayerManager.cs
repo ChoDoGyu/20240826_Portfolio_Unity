@@ -26,6 +26,11 @@ public class PlayerManager : FSM<PlayerManager>
 
     public bool m_attackCheck = false;
 
+    [Header("스폰포인트")]
+    public Transform m_spawnPoint;
+
+    public bool m_isDie = false;
+
     #region 플레이어 스텟
     [HideInInspector]
     public int m_playerLevel;

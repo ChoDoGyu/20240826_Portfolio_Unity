@@ -6,6 +6,19 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
+    static UIManager m_instance;
+    public static UIManager Instance
+    {
+        get
+        {
+            if(m_instance == null)
+            {
+                m_instance = FindObjectOfType<UIManager>();
+            }
+            return m_instance;
+        }
+    }
+
     [SerializeField]
     PlayerManager m_player;
 
@@ -13,18 +26,22 @@ public class UIManager : MonoBehaviour
     Slider m_hpSlider;
     [SerializeField, Header("체력 수치")]
     TextMeshProUGUI m_hpText;
+
+    [SerializeField, Header("리스폰 창")]
+    public GameObject m_respawn;
     private void Awake()
     {
-
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        m_respawn.SetActive(false);
     }
-    void Start()
-    {
-
-    }
-
     void Update()
     {
         HPControl();
+       
     }
     void HPControl()
     {
