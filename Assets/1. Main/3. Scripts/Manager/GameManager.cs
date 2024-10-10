@@ -35,7 +35,7 @@ public class GameManager : MonoBehaviour
     }
     public void Respawn()
     {
-        m_player.m_isDie = false;
+        m_player.ChangeState(PlayerStateRespawn.m_Inst);
         UIManager.Instance.m_respawn.SetActive(false);
     }
 }

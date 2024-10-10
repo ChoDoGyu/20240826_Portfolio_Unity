@@ -15,5 +15,7 @@ public class ItemData : ScriptableObject
     [SerializeField]//가격
     public int m_itemPrice;
     [SerializeField]//설명
-    public int m_itemTooltip;
+    public string m_itemTooltip;
+    [SerializeField]
+    public Sprite m_itemImage;
 }

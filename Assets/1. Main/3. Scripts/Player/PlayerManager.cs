@@ -28,8 +28,13 @@ public class PlayerManager : FSM<PlayerManager>
 
     [Header("스폰포인트")]
     public Transform m_spawnPoint;
-
+    [Header("죽었는지 여부")]
     public bool m_isDie = false;
+
+    [Header("인벤토리")]
+    public Inventory m_inventory;
+    //[Header("클릭한 아이템")]
+    //public ItemData m_clickedItem;
 
     #region 플레이어 스텟
     [HideInInspector]

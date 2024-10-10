@@ -23,7 +23,7 @@ public class MonsterStateChase : FSMSingleton<MonsterStateChase>, FSMState<Monst
         {
             e.ChangeState(MonsterStateIdle.m_Inst);
         }
-        if(e.m_isDie)
+        if(e.m_player.m_isDie)
         {
             e.ChangeState(MonsterStateReset.m_Inst);
         }

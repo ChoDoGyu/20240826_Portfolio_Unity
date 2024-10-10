@@ -1,21 +1,21 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class FSM<T> : MonoBehaviour
 {
-    private T m_owner;    //»óÅÂ ¼ÒÀ¯ÀÚ
-    private FSMState<T> m_currentState = null;    //ÇöÀç »óÅÂ
-    private FSMState<T> m_previousState = null;   //ÀÌÀü »óÅÂ
+    private T m_owner;    //ìƒíƒœ ì†Œìœ ì
+    private FSMState<T> m_currentState = null;    //í˜„ì¬ ìƒíƒœ
+    private FSMState<T> m_previousState = null;   //ì´ì „ ìƒíƒœ
 
     public FSMState<T> m_CurrentState { get { return m_currentState; } }
     public FSMState<T> m_PreviousState { get { return m_previousState; } }
 
-    //ÃÊ±â »óÅÂ¿Í »óÅÂ ¼ÒÀ¯ÀÚ ¼³Á¤
+    //ì´ˆê¸° ìƒíƒœì™€ ìƒíƒœ ì†Œìœ ì ì„¤ì •
     protected void InitState(T owner, FSMState<T> initialState)
     {
         m_owner = owner;
         ChangeState(initialState);
     }
-    //°¢ »óÅÂÀÇ ½Ç½Ã°£ Ã³¸®
+    //ê° ìƒíƒœì˜ ì‹¤ì‹œê°„ ì²˜ë¦¬
     protected void FSMUpdate()
     {
         if(m_currentState != null)
@@ -24,29 +24,29 @@ public class FSM<T> : MonoBehaviour
         }
     }
 
-    //»óÅÂ º¯°æ
+    //ìƒíƒœ ë³€ê²½
     public void ChangeState(FSMState<T> newstate)
     {
-        //ÀÌÀü »óÅÂ ±³Ã¼
+        //ì´ì „ ìƒíƒœ êµì²´
         m_previousState = m_currentState;
 
-        //ÀÌÀü »óÅÂ Á¾·á
+        //ì´ì „ ìƒíƒœ ì¢…ë£Œ
         if(m_previousState != null)
         {
             m_previousState.Exit(m_owner);
         }
 
-        //ÇöÀç »óÅÂ ±³Ã¼
+        //í˜„ì¬ ìƒíƒœ êµì²´
         m_currentState = newstate;
 
-        //ÇöÀç »óÅÂ ½ÃÀÛ
+        //í˜„ì¬ ìƒíƒœ ì‹œì‘
         if(m_currentState != null)
         {
             m_currentState.Enter(m_owner);
         }
     }
 
-    //ÀÌÀü »óÅÂ·Î ÀüÈ¯
+    //ì´ì „ ìƒíƒœë¡œ ì „í™˜
     public void RevertState()
     {
         if (m_previousState != null)
@@ -55,8 +55,8 @@ public class FSM<T> : MonoBehaviour
         }
     }
 
-    //µğ¹ö±ë¿ë
-    //ÇöÀç »óÅÂ È®ÀÎ
+    //ë””ë²„ê¹…ìš©
+    //í˜„ì¬ ìƒíƒœ í™•ì¸
     public override string ToString()
     {
         return m_currentState.ToString();

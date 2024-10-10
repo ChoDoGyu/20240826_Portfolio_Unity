@@ -25,7 +25,7 @@ public class MonsterStateAttack : FSMSingleton<MonsterStateAttack>, FSMState<Mon
         {
             e.ChangeState(MonsterStateIdle.m_Inst);
         }
-        if (e.m_isDie)
+        if (e.m_player.m_isDie)
         {
             e.ChangeState(MonsterStateReset.m_Inst);
         }
