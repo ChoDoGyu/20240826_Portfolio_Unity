@@ -29,6 +29,11 @@ public class UIManager : MonoBehaviour
 
     [SerializeField, Header("리스폰 창")]
     public GameObject m_respawn;
+
+    [SerializeField, Header("Esc창")]
+    public GameObject m_EscWindow;
+
+
     private void Awake()
     {
         if (Instance != null && Instance != this)

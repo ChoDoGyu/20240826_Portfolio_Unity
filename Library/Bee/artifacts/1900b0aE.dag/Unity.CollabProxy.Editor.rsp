@@ -118,6 +118,7 @@
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
 -define:UNITY_EDITOR_ONLY_COMPILATION
+-r:"Assets/2.External/Plugins/Newtonsoft/Newtonsoft.Json.dll"
 -r:"D:/Unity/2022.3.32f1/Editor/Data/Managed/UnityEditor.Graphs.dll"
 -r:"D:/Unity/2022.3.32f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
 -r:"D:/Unity/2022.3.32f1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"
@@ -351,6 +352,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.TestRunner.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
+-analyzer:"Assets/2.External/Plugins/Newtonsoft/Newtonsoft.Json.dll"
 -analyzer:"D:/Unity/2022.3.32f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"D:/Unity/2022.3.32f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Library/PackageCache/com.unity.collab-proxy@2.4.4/Editor/PlasticSCM/Toolbar/ToolbarButton.cs"
