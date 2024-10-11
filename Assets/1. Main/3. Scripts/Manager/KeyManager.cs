@@ -22,17 +22,32 @@ public class KeyData
     }
 }
 //키 입력에 대한 정보를 가지고 있고, 특정한 기능에 대응하는 키를 관리하는 매니져 클래스
-public class KeyManager : SingletonMonoBehavirour<KeyManager>
+public class KeyManager : MonoBehaviour
 {
+    static KeyManager m_instance;
+    public static KeyManager Instance
+    {
+        get
+        {
+            if (m_instance == null)
+            {
+                m_instance = FindObjectOfType<KeyManager>();
+            }
+            return m_instance;
+        }
+    }
+
     private static string m_optionDataFileName = "/KeyData.json";
-    private static string m_filePath = "/1. Main/1. Data/Json/KeyCode/KeyData.json";
+    private static string m_filePath = Application.dataPath + "/1. Main/1. Data/Json/KeyCode/KeyData.json";
+    //private static string m_filePath;
 
     private Dictionary<string, KeyCode> m_keyDictionary;
 
-    protected override void OnAwake()
+    private void Awake()
     {
         m_keyDictionary = new Dictionary<string, KeyCode>();
         //m_filePath = Application.persistentDataPath + m_optionDataFileName;
+        
 
         LoadOptionData();
     }

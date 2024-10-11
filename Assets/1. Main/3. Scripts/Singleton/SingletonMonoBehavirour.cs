@@ -20,7 +20,7 @@ public class SingletonMonoBehavirour<T> : MonoBehaviour where T : SingletonMonoB
             Destroy(gameObject);
         }
     }
-    // Start is called before the first frame update
+
     void Start()
     {
         if(m_instance == this)
