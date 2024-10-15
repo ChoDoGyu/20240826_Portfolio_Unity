@@ -61,7 +61,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerStaus.cs" />
-    <Compile Include="Assets\1. Main\3. Scripts\UI\Inventory\New\InventoryMain.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Monster\MonsterFSM\MonsterStateDamage.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Manager\HPManager.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerPractice\Skill\SlashSkill.cs" />
@@ -82,12 +81,15 @@
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerManager.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Ground.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Singleton\SingletonMonoBehavirour.cs" />
+    <Compile Include="Assets\1. Main\3. Scripts\UI\Inventory\New\InventorySlot.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\UI\Inventory\ObjectItem.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\FSM\FSMState.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerFSM\PlayerStateSkill.cs" />
+    <Compile Include="Assets\1. Main\3. Scripts\UI\Inventory\EquipmentInventory.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerPractice\Skill\SmashSkill.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\UI\Inventory\Slot.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\FSM\FSMSingleton.cs" />
+    <Compile Include="Assets\1. Main\3. Scripts\UI\Inventory\InventoryMain.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Monster\MonsterFSM\MonsterStateReset.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerAttack.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerFSM\PlayerStateDie.cs" />
@@ -99,6 +101,7 @@
     <Compile Include="Assets\1. Main\3. Scripts\Manager\SpawnMonsterList.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Manager\UIManager.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Monster\MonsterController.cs" />
+    <Compile Include="Assets\1. Main\3. Scripts\UI\Inventory\InventoryBase.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerFSM\PlayerStateDamage.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Manager\SpawnAreaManager.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Manager\KeyManager.cs" />
@@ -107,7 +110,6 @@
     <Compile Include="Assets\1. Main\3. Scripts\AttackAreaUnitFind.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Data\MonsterData.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Monster\MonsterFSM\MonsterStateChase.cs" />
-    <Compile Include="Assets\1. Main\3. Scripts\UI\Inventory\New\InventoryBase.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Interface\IClickable.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerFSM\PlayerStateAttack.cs" />
   </ItemGroup>

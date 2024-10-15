@@ -18,4 +18,8 @@ public class ItemData : ScriptableObject
     public string m_itemTooltip;
     [SerializeField]
     public Sprite m_itemImage;
+    [SerializeField]
+    public GameObject m_itemPrefab;
+
+
 }

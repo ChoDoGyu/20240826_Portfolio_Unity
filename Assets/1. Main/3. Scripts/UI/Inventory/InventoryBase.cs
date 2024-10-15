@@ -16,8 +16,7 @@ abstract public class InventoryBase : MonoBehaviour
         {
             m_inventroyBase.SetActive(false);
         }
-        //(3) 할때 해제
-        //인벤토리 슬롯의 부모의 하위 자식들 중 InventorySlot을 모두 가져온다.
-        //m_slots = m_inventroySlotsParent.GetComponentsInChildren<InventorySlot>();
+
     }
+
 }

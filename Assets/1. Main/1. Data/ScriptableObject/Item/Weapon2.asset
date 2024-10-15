@@ -19,3 +19,4 @@ MonoBehaviour:
   m_itemPrice: 2000
   m_itemTooltip: "\uBB34\uAE302"
   m_itemImage: {fileID: 21300000, guid: 172774604c1bee84185a69041576525b, type: 3}
+  m_itemPrefab: {fileID: 2220715905761945192, guid: cf3b3740a0738ab478d810df643eac28, type: 3}

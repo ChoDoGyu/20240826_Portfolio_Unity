@@ -19,3 +19,4 @@ MonoBehaviour:
   m_itemPrice: 1000
   m_itemTooltip: "\uAC11\uC6371"
   m_itemImage: {fileID: 21300000, guid: 2f1eaeeaad36ee5469eff7ff158f37ba, type: 3}
+  m_itemPrefab: {fileID: 2220715905761945192, guid: cf3b3740a0738ab478d810df643eac28, type: 3}
