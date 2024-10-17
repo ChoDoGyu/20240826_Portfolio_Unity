@@ -409,6 +409,7 @@
 "Assets/1. Main/3. Scripts/Player/PlayerStaus.cs"
 "Assets/1. Main/3. Scripts/Singleton/SingletonDontDestroy.cs"
 "Assets/1. Main/3. Scripts/Singleton/SingletonMonoBehavirour.cs"
+"Assets/1. Main/3. Scripts/UI/Inventory/DragSlot.cs"
 "Assets/1. Main/3. Scripts/UI/Inventory/EquipmentInventory.cs"
 "Assets/1. Main/3. Scripts/UI/Inventory/Inventory.cs"
 "Assets/1. Main/3. Scripts/UI/Inventory/InventoryBase.cs"
@@ -417,6 +418,9 @@
 "Assets/1. Main/3. Scripts/UI/Inventory/ObjectItem.cs"
 "Assets/1. Main/3. Scripts/UI/Inventory/Slot.cs"
 "Assets/1. Main/3. Scripts/UI/Option/KeySettingController.cs"
+"Assets/Ancient Set - Temples/Aquarius Max Character/DemoCharacter.cs"
+"Assets/Ancient Set - Temples/Aquarius Max Character/MakeSomeNoise.cs"
+"Assets/Ancient Set - Temples/Aquarius Max Character/Rotator2.cs"
 -langversion:9.0
 /deterministic
 /optimize+

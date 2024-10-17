@@ -409,12 +409,16 @@
 "Assets/1. Main/3. Scripts/Player/PlayerStaus.cs"
 "Assets/1. Main/3. Scripts/Singleton/SingletonDontDestroy.cs"
 "Assets/1. Main/3. Scripts/Singleton/SingletonMonoBehavirour.cs"
+"Assets/1. Main/3. Scripts/UI/Inventory/DragSlot.cs"
+"Assets/1. Main/3. Scripts/UI/Inventory/EquipmentInventory.cs"
 "Assets/1. Main/3. Scripts/UI/Inventory/Inventory.cs"
-"Assets/1. Main/3. Scripts/UI/Inventory/New/InventoryBase.cs"
-"Assets/1. Main/3. Scripts/UI/Inventory/New/InventoryMain.cs"
+"Assets/1. Main/3. Scripts/UI/Inventory/InventoryBase.cs"
+"Assets/1. Main/3. Scripts/UI/Inventory/InventoryMain.cs"
+"Assets/1. Main/3. Scripts/UI/Inventory/New/InventorySlot.cs"
 "Assets/1. Main/3. Scripts/UI/Inventory/ObjectItem.cs"
 "Assets/1. Main/3. Scripts/UI/Inventory/Slot.cs"
 "Assets/1. Main/3. Scripts/UI/Option/KeySettingController.cs"
+"Assets/PBR_Grass_Textures/Scripts/CameraFreeflight.cs"
 -langversion:9.0
 /deterministic
 /optimize-
