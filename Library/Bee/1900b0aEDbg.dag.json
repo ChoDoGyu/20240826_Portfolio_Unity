@@ -24526,6 +24526,7 @@
         "Assets/1. Main/3. Scripts/FSM/FSMState.cs",
         "Assets/1. Main/3. Scripts/Ground.cs",
         "Assets/1. Main/3. Scripts/Interface/IClickable.cs",
+        "Assets/1. Main/3. Scripts/Manager/AnimationManager.cs",
         "Assets/1. Main/3. Scripts/Manager/GameManager.cs",
         "Assets/1. Main/3. Scripts/Manager/HPManager.cs",
         "Assets/1. Main/3. Scripts/Manager/KeyManager.cs",
@@ -24568,7 +24569,6 @@
         "Assets/1. Main/3. Scripts/UI/Inventory/ObjectItem.cs",
         "Assets/1. Main/3. Scripts/UI/Inventory/Slot.cs",
         "Assets/1. Main/3. Scripts/UI/Option/KeySettingController.cs",
-        "Assets/PBR_Grass_Textures/Scripts/CameraFreeflight.cs",
         "D:/Unity/2022.3.32f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll",
         "D:/Unity/2022.3.32f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll",
         "Library/Bee/artifacts/1900b0aEDbg.dag/Assembly-CSharp.rsp"

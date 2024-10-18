@@ -376,6 +376,7 @@
 "Assets/1. Main/3. Scripts/FSM/FSMState.cs"
 "Assets/1. Main/3. Scripts/Ground.cs"
 "Assets/1. Main/3. Scripts/Interface/IClickable.cs"
+"Assets/1. Main/3. Scripts/Manager/AnimationManager.cs"
 "Assets/1. Main/3. Scripts/Manager/GameManager.cs"
 "Assets/1. Main/3. Scripts/Manager/HPManager.cs"
 "Assets/1. Main/3. Scripts/Manager/KeyManager.cs"
@@ -418,7 +419,6 @@
 "Assets/1. Main/3. Scripts/UI/Inventory/ObjectItem.cs"
 "Assets/1. Main/3. Scripts/UI/Inventory/Slot.cs"
 "Assets/1. Main/3. Scripts/UI/Option/KeySettingController.cs"
-"Assets/PBR_Grass_Textures/Scripts/CameraFreeflight.cs"
 -langversion:9.0
 /deterministic
 /optimize-

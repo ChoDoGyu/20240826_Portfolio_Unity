@@ -7,6 +7,7 @@ public class PlayerStateIdle : FSMSingleton<PlayerStateIdle>, FSMState<PlayerMan
     public void Enter(PlayerManager e)
     {
         print("PlayerStateIdle");
+        e.m_aniManager.MoveAnimation(0);
     }
     public void Execute(PlayerManager e)
     {

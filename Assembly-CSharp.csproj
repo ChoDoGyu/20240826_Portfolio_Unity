@@ -65,6 +65,7 @@
     <Compile Include="Assets\1. Main\3. Scripts\Manager\HPManager.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerPractice\Skill\SlashSkill.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Monster\MonsterFSM\MonsterStateAttack.cs" />
+    <Compile Include="Assets\1. Main\3. Scripts\Manager\AnimationManager.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerFSM\PlayerStateRespawn.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\FSM\FSM.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerFSM\PlayerStateChase.cs" />
@@ -91,7 +92,6 @@
     <Compile Include="Assets\1. Main\3. Scripts\UI\Inventory\Slot.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\FSM\FSMSingleton.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\UI\Inventory\InventoryMain.cs" />
-    <Compile Include="Assets\PBR_Grass_Textures\Scripts\CameraFreeflight.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Monster\MonsterFSM\MonsterStateReset.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerAttack.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerFSM\PlayerStateDie.cs" />

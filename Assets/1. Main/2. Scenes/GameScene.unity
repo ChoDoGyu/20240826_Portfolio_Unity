@@ -28275,11 +28275,13 @@ GameObject:
   - component: {fileID: 8324692608939813315}
   - component: {fileID: 8324692608939813308}
   - component: {fileID: 8324692608939813307}
+  - component: {fileID: 8324692608939813316}
   - component: {fileID: 8324692608939813314}
   - component: {fileID: 8324692608939813313}
   - component: {fileID: 8324692608939813312}
   - component: {fileID: 8324692608939813311}
   - component: {fileID: 8324692608939813310}
+  - component: {fileID: 8324692608939813317}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -28655,6 +28657,7 @@ MonoBehaviour:
   m_attack: {fileID: 0}
   m_playerStaus: {fileID: 0}
   m_hpManager: {fileID: 0}
+  m_aniManager: {fileID: 0}
   m_monsterController: {fileID: 0}
   m_attackAreaUnit: {fileID: 2124989950}
   m_moveCheck: 0
@@ -28692,6 +28695,40 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!95 &8324692608939813316
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7941141365009181944}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 600645b3bc65cb2468f84b1e728d0d46, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8324692608939813317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7941141365009181944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08f78dbefc8f8984ea8e014c88af0f1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_animator: {fileID: 0}
 --- !u!1 &8342595682970381458
 GameObject:
   m_ObjectHideFlags: 0

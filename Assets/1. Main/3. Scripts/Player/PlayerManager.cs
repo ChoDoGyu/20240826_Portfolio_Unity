@@ -14,6 +14,7 @@ public class PlayerManager : FSM<PlayerManager>
     private Camera m_camera;
     public PlayerStaus m_playerStaus;
     public HPManager m_hpManager;
+    public AnimationManager m_aniManager;
     #endregion
 
     //[HideInInspector]//클릭한 몬스터 정보를 가져오기 위한 변수
@@ -57,6 +58,7 @@ public class PlayerManager : FSM<PlayerManager>
         m_playerStaus = GetComponent<PlayerStaus>();
         m_hpManager = GetComponent<HPManager>();
         m_camera = Camera.main;
+        m_aniManager = GetComponent<AnimationManager>();
 
         InitState(this, PlayerStateIdle.m_Inst);
     }
