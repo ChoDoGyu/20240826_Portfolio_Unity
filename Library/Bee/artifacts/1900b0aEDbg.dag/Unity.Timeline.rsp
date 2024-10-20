@@ -118,6 +118,12 @@
 -define:TIMELINE_FRAMEACCURATE
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
+-r:"Assets/2.External/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.AccessControl.DLL"
+-r:"Assets/2.External/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Client.dll"
+-r:"Assets/2.External/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Documents.dll"
+-r:"Assets/2.External/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Extensions.dll"
+-r:"Assets/2.External/Google Sheets to Unity/Scripts/v3/Plugins/Google.GData.Spreadsheets.dll"
+-r:"Assets/2.External/Google Sheets to Unity/Scripts/v3/Plugins/TinyJSON.dll"
 -r:"Assets/2.External/Plugins/Newtonsoft/Newtonsoft.Json.dll"
 -r:"D:/Unity/2022.3.32f1/Editor/Data/Managed/UnityEditor.Graphs.dll"
 -r:"D:/Unity/2022.3.32f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"

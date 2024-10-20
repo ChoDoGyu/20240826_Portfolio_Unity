@@ -1,50 +1,48 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
-public class EquipmentInventory : InventoryBase
+public class EquipmentInventory : MonoBehaviour
 {
-    public static bool m_isInventoryActive = false;
+    public List<ItemData> m_items;//아이템을 담을 리스트
+    [SerializeField]
+    private Transform m_slotParent;//Slot의 부모가 되는 Bag을 담을 곳
+    [SerializeField]
+    public EquipmentSlot[] m_slots;//Bag의 하위에 등록된 Slot을 담을 곳
 
-    [Header("현재 계산된 수치를 표현할 텍스트 라벨들")]
-    [SerializeField] private TextMeshProUGUI m_damageLabel;
-    [SerializeField] private TextMeshProUGUI m_defenseLabel;
+    public Inventory m_inventory;
 
-    new void Awake()
+#if UNITY_EDITOR
+    private void OnValidate()//OnValidate()기능은 유니티 에디터에서 바로 작동을 하는 역할을 한다
     {
-        base.Awake();
+        m_slots = m_slotParent.GetComponentsInChildren<EquipmentSlot>();//m_slotParent 이게 정해지지 않으면 에레 뜸
     }
 
-    private void Update()
+#endif
+    void Awake()
     {
-        TryOpenInventory();
+        FreshSlot();//게임이 시작되면 m_items에 들어있는 아이템을 인벤토리에 넣어준다.
     }
-
-    private void TryOpenInventory()
+    public void FreshSlot()//아이템이 들어오거나 나가면 Slot의 내용을 다시 정리하여 화면에 보여주는 기능
     {
-        if (Input.GetKeyDown(KeyManager.Instance.GetKeyCode("Equipment")))
+        int i = 0;
+        for (; i < m_items.Count && i < m_slots.Length; i++)
         {
-            if (!m_isInventoryActive)
-            {
-                OpenInventory();
-            }
-            else
-            {
-                CloseInventory();
-            }
+            m_slots[i].m_Item = m_items[i];
+        }
+        for (; i < m_slots.Length; i++)
+        {
+            m_slots[i].m_Item = null;
         }
     }
-
-    private void OpenInventory()
+    public void AddEquipmentItem(ItemData item)
     {
-        m_inventroyBase.SetActive(true);
-        m_isInventoryActive = true;
+        m_items.Add(item);
+        FreshSlot();
     }
-
-    private void CloseInventory()
+    public void ReMoveEquipmentItem(ItemData item)
     {
-        m_inventroyBase.SetActive(false);
-        m_isInventoryActive = false;
+        m_items.Remove(item);
+        FreshSlot();
     }
 }

@@ -1,15 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class Slot : MonoBehaviour//, IPointerClickHandler, IBeginDragHandler, IDragHandler, IDropHandler, IPointerEnterHandler, IPointerExitHandler
+public class Slot : MonoBehaviour, IPointerDownHandler
 {
     [SerializeField]
     Image m_itemImage;//Image Component를 담을 곳
 
     private ItemData m_item;
+
     public ItemData m_Item
     {
         get { return m_item; }//슬롯의 item 정보를 넘겨줄 때 사용
@@ -33,45 +35,117 @@ public class Slot : MonoBehaviour//, IPointerClickHandler, IBeginDragHandler, ID
         }
     }
 
-    ////드래그 오버라이드
+    Inventory m_inventory;
 
-    ////마우스 드래그 시작 오버드라이드
-    //public void OnBeginDrag(PointerEventData eventData)
-    //{
-    //    if(m_item != null)
-    //    {
-    //        //현재 슬롯으로 등록
-    //        DragSlot.Instance.m_currentSlot = this;
-    //        DragSlot.Instance.DragSetImage(m_itemImage);
-    //        DragSlot.Instance.transform.position = eventData.position;
-    //    }
-    //}
-    ////마우스 드래그 중 매 프레임마다 호출되는 오버라이드
-    //public void OnDrag(PointerEventData eventData)
-    //{
-    //    if(m_item != null)
-    //    {
-    //        DragSlot.Instance.transform.position = eventData.position;
-    //    }
-    //}
-    ////마우스 드래그 종료 오버라이드
-    //public void OnEndDrag(PointerEventData eventData)
-    //{
-    //    DragSlot.Instance.SetColor(0);
-    //    DragSlot.Instance.m_currentSlot = null;
-    //}
-    ////해당 슬롯에 무안가가 마우스 드롭 됐을 때 발생하는 이벤트
-    //public void OnDrop(PointerEventData eventData)
-    //{
-    //    ChangeSlot();
-    //}
+    void Start()
+    {
+        m_inventory = GetComponentInParent<Inventory>();
+    }
 
-    ////아이템 바꾸기
-
-    //private void ChangeSlot()
-    //{
-
-    //}
-
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        RightClick();
+    }
+    void RightClick()
+    {
+        switch(m_item.m_itemCategoryNum)
+        {
+            case 0://투구
+                if (m_inventory.m_Equipmentinventory.m_slots[0].m_Item)
+                {
+                    ItemData itemData = m_inventory.m_Equipmentinventory.m_slots[0].m_Item;
+                    m_inventory.m_Equipmentinventory.ReMoveEquipmentItem(m_inventory.m_Equipmentinventory.m_slots[0].m_Item);
+                    m_inventory.RemoveItem(m_item);
+                    m_inventory.m_Equipmentinventory.m_slots[0].m_Item = this.m_item;
+                    this.m_item = itemData;
+                    m_inventory.AddItem(m_item);
+                    m_inventory.m_Equipmentinventory.AddEquipmentItem(m_inventory.m_Equipmentinventory.m_slots[0].m_Item);
+                }
+                else
+                {
+                    m_inventory.m_Equipmentinventory.m_slots[0].m_Item = m_item;
+                    m_inventory.RemoveItem(m_Item);
+                    m_item = null;
+                    m_inventory.m_Equipmentinventory.AddEquipmentItem(m_inventory.m_Equipmentinventory.m_slots[0].m_Item);
+                }
+                break;
+            case 1://무기
+                if (m_inventory.m_Equipmentinventory.m_slots[1].m_Item)
+                {
+                    ItemData itemData = m_inventory.m_Equipmentinventory.m_slots[1].m_Item;
+                    m_inventory.m_Equipmentinventory.ReMoveEquipmentItem(m_inventory.m_Equipmentinventory.m_slots[1].m_Item);
+                    m_inventory.RemoveItem(m_item);
+                    m_inventory.m_Equipmentinventory.m_slots[1].m_Item = this.m_item;
+                    this.m_item = itemData;
+                    m_inventory.AddItem(m_item);
+                    m_inventory.m_Equipmentinventory.AddEquipmentItem(m_inventory.m_Equipmentinventory.m_slots[1].m_Item);
+                }
+                else
+                {
+                    m_inventory.m_Equipmentinventory.m_slots[1].m_Item = m_item;
+                    m_inventory.RemoveItem(m_Item);
+                    m_item = null;
+                    m_inventory.m_Equipmentinventory.AddEquipmentItem(m_inventory.m_Equipmentinventory.m_slots[1].m_Item);
+                }
+                break;
+            case 2://갑옷
+                if (m_inventory.m_Equipmentinventory.m_slots[2].m_Item)
+                {
+                    ItemData itemData = m_inventory.m_Equipmentinventory.m_slots[2].m_Item;
+                    m_inventory.m_Equipmentinventory.ReMoveEquipmentItem(m_inventory.m_Equipmentinventory.m_slots[2].m_Item);
+                    m_inventory.RemoveItem(m_item);
+                    m_inventory.m_Equipmentinventory.m_slots[2].m_Item = this.m_item;
+                    this.m_item = itemData;
+                    m_inventory.AddItem(m_item);
+                    m_inventory.m_Equipmentinventory.AddEquipmentItem(m_inventory.m_Equipmentinventory.m_slots[2].m_Item);
+                }
+                else
+                {
+                    m_inventory.m_Equipmentinventory.m_slots[2].m_Item = m_item;
+                    m_inventory.RemoveItem(m_Item);
+                    m_item = null;
+                    m_inventory.m_Equipmentinventory.AddEquipmentItem(m_inventory.m_Equipmentinventory.m_slots[2].m_Item);
+                }
+                break;
+            case 3://장갑
+                if (m_inventory.m_Equipmentinventory.m_slots[3].m_Item)
+                {
+                    ItemData itemData = m_inventory.m_Equipmentinventory.m_slots[3].m_Item;
+                    m_inventory.m_Equipmentinventory.ReMoveEquipmentItem(m_inventory.m_Equipmentinventory.m_slots[3].m_Item);
+                    m_inventory.RemoveItem(m_item);
+                    m_inventory.m_Equipmentinventory.m_slots[3].m_Item = this.m_item;
+                    this.m_item = itemData;
+                    m_inventory.AddItem(m_item);
+                    m_inventory.m_Equipmentinventory.AddEquipmentItem(m_inventory.m_Equipmentinventory.m_slots[3].m_Item);
+                }
+                else
+                {
+                    m_inventory.m_Equipmentinventory.m_slots[3].m_Item = m_item;
+                    m_inventory.RemoveItem(m_Item);
+                    m_item = null;
+                    m_inventory.m_Equipmentinventory.AddEquipmentItem(m_inventory.m_Equipmentinventory.m_slots[3].m_Item);
+                }
+                break;
+            case 4://신발
+                if (m_inventory.m_Equipmentinventory.m_slots[4].m_Item)
+                {
+                    ItemData itemData = m_inventory.m_Equipmentinventory.m_slots[4].m_Item;
+                    m_inventory.m_Equipmentinventory.ReMoveEquipmentItem(m_inventory.m_Equipmentinventory.m_slots[4].m_Item);
+                    m_inventory.RemoveItem(m_item);
+                    m_inventory.m_Equipmentinventory.m_slots[4].m_Item = this.m_item;
+                    this.m_item = itemData;
+                    m_inventory.AddItem(m_item);
+                    m_inventory.m_Equipmentinventory.AddEquipmentItem(m_inventory.m_Equipmentinventory.m_slots[4].m_Item);
+                }
+                else
+                {
+                    m_inventory.m_Equipmentinventory.m_slots[4].m_Item = m_item;
+                    m_inventory.RemoveItem(m_Item);
+                    m_item = null;
+                    m_inventory.m_Equipmentinventory.AddEquipmentItem(m_inventory.m_Equipmentinventory.m_slots[4].m_Item);
+                }
+                break;
+        }
+    }
 
 }

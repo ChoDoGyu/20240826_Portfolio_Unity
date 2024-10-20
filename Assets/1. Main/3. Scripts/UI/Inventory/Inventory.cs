@@ -10,6 +10,8 @@ public class Inventory : MonoBehaviour
     [SerializeField]
     private Slot[] m_slots;//Bag의 하위에 등록된 Slot을 담을 곳
 
+    public EquipmentInventory m_Equipmentinventory;
+
 #if UNITY_EDITOR
     private void OnValidate()//OnValidate()기능은 유니티 에디터에서 바로 작동을 하는 역할을 한다
     {
@@ -44,5 +46,10 @@ public class Inventory : MonoBehaviour
         {
             print("슬롯이 가득 차 있습니다.");
         }
+    }
+    public void RemoveItem(ItemData item)
+    {
+        m_items.Remove(item);
+        FreshSlot();
     }
 }

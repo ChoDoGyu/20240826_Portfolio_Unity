@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c84b370c07161d418509239739a9524, type: 3}
+  m_Name: GSTU_Config
+  m_EditorClassIdentifier: Assembly-CSharp:GoogleSheetsToUnity:GoogleSheetsToUnityConfig
+  CLIENT_ID: 639587284067-ngaf57nejc6jvcc8qs1nug0knk6ktv6i.apps.googleusercontent.com
+  CLIENT_SECRET: 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
+  ACCESS_TOKEN: 
+  REFRESH_TOKEN: 1/kqepo9i9qIVDShLRC2c0kJgb-3DYKJevwVTF6LAfGGM
+  API_Key: 
+  PORT: 8080
+  gdr:
+    access_token: ya29.a0AcM612xHA1Rcnx4pM3U-0bZDCHhEsfv-CSeGQKAfbzgkN2J6ykjY-xW3Wtml5r0IlbnfcJ1k6lvv3U2ift-tFj1eV3xICbhY8MKVawcIyGKsjwPfFoaY9-WlUIB6B7tIBa5ytFjVxDsdCANopF4-ty0Y5EyLJIwVrvhecNHuaCgYKAQISARASFQHGX2MiurgaqrflYhjmJnY3I0p0tQ0175
+    refresh_token: 1//0ex3hy0LiL3YtCgYIARAAGA4SNwF-L9IrosuDjKwvQUYGRsuRdd9edwKHIehvkt1PBqwGOgPUoJSUQwaz2yzbrgkdf17o0h1UnKE
+    token_type: Bearer
+    expires_in: 3599

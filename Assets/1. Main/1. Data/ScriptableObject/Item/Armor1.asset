@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_itemName: Armor1
   m_itemCategory: "\uAC11\uC637"
-  m_itemCategoryNum: 1
+  m_itemCategoryNum: 2
   m_effectNum: 2
   m_itemPrice: 1000
   m_itemTooltip: "\uAC11\uC6371"
-  m_itemImage: {fileID: 21300000, guid: 2f1eaeeaad36ee5469eff7ff158f37ba, type: 3}
-  m_itemPrefab: {fileID: 2220715905761945192, guid: cf3b3740a0738ab478d810df643eac28, type: 3}
+  m_itemImage: {fileID: 0}
+  m_itemPrefab: {fileID: 0}

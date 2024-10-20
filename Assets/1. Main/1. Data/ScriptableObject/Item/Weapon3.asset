@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_itemName: Weapon3
   m_itemCategory: "\uBB34\uAE30"
-  m_itemCategoryNum: 0
+  m_itemCategoryNum: 1
   m_effectNum: 30
   m_itemPrice: 3000
   m_itemTooltip: "\uBB34\uAE303"
-  m_itemImage: {fileID: 21300000, guid: 5d7061fc7da05ce44add317708ec7215, type: 3}
-  m_itemPrefab: {fileID: 2220715905761945192, guid: cf3b3740a0738ab478d810df643eac28, type: 3}
+  m_itemImage: {fileID: 0}
+  m_itemPrefab: {fileID: 0}

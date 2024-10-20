@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 [CreateAssetMenu(fileName = "ItemData", menuName = "ScriptableObject/ItemData", order = int.MaxValue)]
 public class ItemData : ScriptableObject
 {
@@ -20,6 +21,4 @@ public class ItemData : ScriptableObject
     public Sprite m_itemImage;
     [SerializeField]
     public GameObject m_itemPrefab;
-
-
 }

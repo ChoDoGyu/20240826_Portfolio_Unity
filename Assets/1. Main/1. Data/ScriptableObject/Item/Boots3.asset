@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_itemName: Boots3
   m_itemCategory: "\uC2E0\uBC1C"
-  m_itemCategoryNum: 3
+  m_itemCategoryNum: 4
   m_effectNum: 8
   m_itemPrice: 3000
   m_itemTooltip: "\uC2E0\uBC1C3"
-  m_itemImage: {fileID: 21300000, guid: da09804303305f542a686824630e7269, type: 3}
-  m_itemPrefab: {fileID: 2220715905761945192, guid: cf3b3740a0738ab478d810df643eac28, type: 3}
+  m_itemImage: {fileID: 0}
+  m_itemPrefab: {fileID: 0}

@@ -65,6 +65,7 @@ public class PlayerManager : FSM<PlayerManager>
     void Start()
     {
         StartStaus();
+
     }
     void Update()
     {
