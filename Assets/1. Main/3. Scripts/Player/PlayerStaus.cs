@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerStaus : MonoBehaviour
 {
     [SerializeField]
-    PlayerData m_playerData;
+    PlayerDataSO m_playerData;
 
     [SerializeField]
     public int m_level;

@@ -29,7 +29,7 @@ public class GoogleSheetManager : MonoBehaviour
             
             for (int j = 0; j < columnSize; j++)
             {
-                ItemDataStruct targetItem = m_itmeSO.m_itmeDataList[i];
+                ItemDataStruct targetItem;// = m_itmeSO.m_itmeDataList[i];
 
                 targetItem.m_itemName = column[0];
                 targetItem.m_itemCategory = column[1];
@@ -37,6 +37,8 @@ public class GoogleSheetManager : MonoBehaviour
                 targetItem.m_effectNum = float.Parse(column[3]);
                 targetItem.m_itemPrice = int.Parse(column[4]);
                 targetItem.m_itemTooltip = column[5];
+
+                m_itmeSO.m_itmeDataList.Add(targetItem);
             }
             
         }

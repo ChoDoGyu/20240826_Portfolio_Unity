@@ -64,6 +64,7 @@
     <Compile Include="Assets\1. Main\3. Scripts\Monster\MonsterFSM\MonsterStateDamage.cs" />
     <Compile Include="Assets\2.External\Google Sheets to Unity\Scripts\v4\Spreadsheet.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Manager\HPManager.cs" />
+    <Compile Include="Assets\1. Main\3. Scripts\Data\PlayerDataSO.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerPractice\Skill\SlashSkill.cs" />
     <Compile Include="Assets\2.External\Google Sheets to Unity\Scripts\v3\SecurityPolicy.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Monster\MonsterFSM\MonsterStateAttack.cs" />
@@ -73,7 +74,6 @@
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerFSM\PlayerStateChase.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerMove.cs" />
     <Compile Include="Assets\2.External\Google Sheets to Unity\Scripts\v4\GoogleAuthrisationHelper.cs" />
-    <Compile Include="Assets\1. Main\3. Scripts\Data\PlayerData.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\ScriptableObject\ItemDataSO.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerPractice\PlayerAttackPractice.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerPractice\Skill\UseSkill.cs" />
@@ -84,6 +84,7 @@
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerManager.cs" />
     <Compile Include="Assets\2.External\Google Sheets to Unity\Scripts\Utils\EditorCoroutineRunner.cs" />
     <Compile Include="Assets\2.External\Google Sheets to Unity\Animal Example\Scripts\Scriptable Objects\AnimalContainer.cs" />
+    <Compile Include="Assets\1. Main\3. Scripts\UI\SaveLoadUI\Select.cs" />
     <Compile Include="Assets\2.External\Google Sheets to Unity\Scripts\v3\PublicSpreadSheetManager.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Ground.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Manager\GoogleSheetManager.cs" />
@@ -93,8 +94,8 @@
     <Compile Include="Assets\1. Main\3. Scripts\UI\Inventory\ObjectItem.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\UI\Inventory\DragSlot.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\FSM\FSMState.cs" />
-    <Compile Include="Assets\1. Main\3. Scripts\UI\Inventory\EquipmentInventory.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerFSM\PlayerStateSkill.cs" />
+    <Compile Include="Assets\1. Main\3. Scripts\UI\Inventory\EquipmentInventory.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerPractice\Skill\SmashSkill.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\UI\Inventory\Slot.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\FSM\FSMSingleton.cs" />
@@ -113,6 +114,7 @@
     <Compile Include="Assets\1. Main\3. Scripts\Monster\MonsterFSM\MonsterStateIdle.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerPractice\Skill\DefaultSkill.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Monster\MonsterFSM\MonsterStateDie.cs" />
+    <Compile Include="Assets\1. Main\3. Scripts\Manager\DataManager.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerFSM\PlayerStateIdle.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Manager\SpawnMonsterList.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Manager\UIManager.cs" />
