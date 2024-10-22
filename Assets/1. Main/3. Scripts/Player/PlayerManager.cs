@@ -34,6 +34,8 @@ public class PlayerManager : FSM<PlayerManager>
 
     [Header("인벤토리")]
     public Inventory m_inventory;
+    [Header("장비창")]
+    public EquipmentInventory m_equipment;
     //[Header("클릭한 아이템")]
     //public ItemData m_clickedItem;
 

@@ -39,6 +39,7 @@ public class Inventory : MonoBehaviour
     {
         if(m_items.Count < m_slots.Length)
         {
+
             m_items.Add(item);
             FreshSlot();
         }
@@ -49,6 +50,7 @@ public class Inventory : MonoBehaviour
     }
     public void RemoveItem(ItemData item)
     {
+
         m_items.Remove(item);
         FreshSlot();
     }

@@ -44,7 +44,17 @@ public class Slot : MonoBehaviour, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        RightClick();
+        if(m_item)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                m_inventory.RemoveItem(m_item);
+            }
+            if (Input.GetMouseButtonDown(1))
+            {
+                RightClick();
+            }
+        }
     }
     void RightClick()
     {
@@ -147,5 +157,6 @@ public class Slot : MonoBehaviour, IPointerDownHandler
                 break;
         }
     }
+
 
 }

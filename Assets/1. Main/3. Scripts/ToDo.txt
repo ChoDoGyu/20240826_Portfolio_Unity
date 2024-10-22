@@ -27,7 +27,7 @@ https://bonnate.tistory.com/280
 
 ////////////////////////////////
 
-1. 저장시스템 만들기
+1. 저장시스템 만들기(완료)
 https://coding-of-today.tistory.com/178
 https://coding-of-today.tistory.com/180
 https://coding-of-today.tistory.com/181
@@ -37,4 +37,6 @@ https://coding-of-today.tistory.com/181
 5. 옵션(사운드 등등) 만들기
 
 질문
-1. 데이터 리스트에 저장(지금 필요 없음 나중에 1차 완성 후 업그레이드 시 필요)
+1. 클릭시 발동은 했는데 우클릭은 있는지...
+2. 플레이어 데이터 저장은 만들었는데 게임 데이터 저장은 어떻게 해야 할까요??
+	- 플레이어 위치, 몬스터 소환 수, 몬스터 위치, 아이템이 떨어져있는 유무, 위치 등등

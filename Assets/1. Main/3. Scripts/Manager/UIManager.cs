@@ -55,4 +55,9 @@ public class UIManager : MonoBehaviour
         m_hpSlider.value = m_player.m_hpManager.m_hp;
         m_hpText.text = m_hpSlider.value.ToString() + "/" + m_hpSlider.maxValue.ToString();
     }
+
+    public void SaveButton()
+    {
+        DataManager.Instance.PlayingSaveData();
+    }
 }

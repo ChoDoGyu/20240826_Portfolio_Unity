@@ -23,6 +23,10 @@ public class EquipmentInventory : MonoBehaviour
     {
         FreshSlot();//게임이 시작되면 m_items에 들어있는 아이템을 인벤토리에 넣어준다.
     }
+    void Start()
+    {
+        
+    }
     public void FreshSlot()//아이템이 들어오거나 나가면 Slot의 내용을 다시 정리하여 화면에 보여주는 기능
     {
         int i = 0;
@@ -38,6 +42,7 @@ public class EquipmentInventory : MonoBehaviour
     public void AddEquipmentItem(ItemData item)
     {
         m_items.Add(item);
+        
         FreshSlot();
     }
     public void ReMoveEquipmentItem(ItemData item)
