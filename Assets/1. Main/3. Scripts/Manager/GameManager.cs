@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
 
     void StartGameSetting()
     {
+        #region 플레이어 상태
         if (DataManager.Instance.m_nowPlayer.m_inventory != null)
         {
             for (int i = 0; i < DataManager.Instance.m_nowPlayer.m_inventory.Count; i++)
@@ -75,7 +76,12 @@ public class GameManager : MonoBehaviour
         m_player.transform.position = DataManager.Instance.m_nowPlayer.m_curTransform;
         //m_player.m_coin = DataManager.Instance.m_nowPlayer.m_coin;
 
+        #endregion
+
+        #region UI 초기화
+        UIManager.Instance.m_EscWindow.SetActive(false);
 
 
+        #endregion
     }
 }

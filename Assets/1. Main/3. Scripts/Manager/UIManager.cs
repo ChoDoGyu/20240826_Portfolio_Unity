@@ -58,6 +58,8 @@ public class UIManager : MonoBehaviour
 
     public void SaveButton()
     {
+        m_EscWindow.SetActive(false);
+
         DataManager.Instance.PlayingSaveData();
     }
 }
