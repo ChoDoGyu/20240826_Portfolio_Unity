@@ -29,25 +29,25 @@ public class PlayerAttackPractice : MonoBehaviour
             m_lastSkill = m_curSkill;
             m_curSkill.InitSeting();
         }
-        m_curSkill.Using(m_attackArea);
+        m_curSkill.Using();
         ChangeSkill();
     }
     void ChangeSkill()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            SmashSkill smash = GetComponent<SmashSkill>();
-            m_curSkill = smash;
+            Skill1 skill1 = GetComponent<Skill1>();
+            m_curSkill = skill1;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            SlashSkill slash = GetComponent<SlashSkill>();
-            m_curSkill = slash;
+            Skill2 skill2 = GetComponent<Skill2>();
+            m_curSkill = skill2;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            AirSkill air = GetComponent<AirSkill>();
-            m_curSkill = air;
+            Skill3 skill3 = GetComponent<Skill3>();
+            m_curSkill = skill3;
         }
     }
 

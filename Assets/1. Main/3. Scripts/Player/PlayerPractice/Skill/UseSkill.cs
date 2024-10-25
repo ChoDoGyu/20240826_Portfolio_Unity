@@ -14,6 +14,13 @@ public abstract class UseSkill : MonoBehaviour
 
     public SkillData m_data;
 
+    public PlayerManager m_playermanager;
+
+    void Start()
+    {
+        m_playermanager = GetComponent<PlayerManager>();
+    }
+
     public virtual void InitSeting()
     {
         m_skillDataStruct.m_skillDamage = m_data.m_skillDamage;
@@ -21,9 +28,9 @@ public abstract class UseSkill : MonoBehaviour
         m_skillDataStruct.m_skillCoolTime = m_data.m_skillCoolTime;
     }
 
-    public virtual void Using(GameObject obj)
+    public virtual void Using()
     {
-        obj.transform.localScale = new Vector3(3, 2, m_skillDataStruct.m_attackRange);
-        obj.transform.localPosition = new Vector3(0, 0, m_skillDataStruct.m_attackRange / 2);
+        m_playermanager.m_attack.m_attackArea.transform.localScale = new Vector3(3, 2, m_skillDataStruct.m_attackRange);
+        m_playermanager.m_attack.m_attackArea.transform.localPosition = new Vector3(0, 0, m_skillDataStruct.m_attackRange / 2);
     }
 }

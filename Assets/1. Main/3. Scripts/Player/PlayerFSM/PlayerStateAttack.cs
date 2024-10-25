@@ -33,11 +33,7 @@ public class PlayerStateAttack : FSMSingleton<PlayerStateAttack>, FSMState<Playe
                         MonsterController controller = e.m_attackAreaUnit.m_unitList[i].GetComponent<MonsterController>();
                         controller.m_hpManager.ReduceHp(e.m_playerAttackPoint);
                         controller.ChangeState(MonsterStateDamage.m_Inst);
-
-                        //e.m_attackAreaUnit.m_unitList[i].m_hpManager.ReduceHp(e.m_playerAttackPoint);
-                        //e.m_attackAreaUnit.m_unitList[i].ChangeState(MonsterStateDamage.m_Inst);
-
-
+                        //e.m_aniManager
                     }
                     e.m_lastAttackTime = Time.time;
                 }
