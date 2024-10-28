@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerStaus.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Monster\MonsterFSM\MonsterStateDamage.cs" />
+    <Compile Include="Assets\1. Main\3. Scripts\Player\Skill\Skill3.cs" />
     <Compile Include="Assets\2.External\Google Sheets to Unity\Scripts\v4\Spreadsheet.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Manager\HPManager.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Data\PlayerDataSO.cs" />
@@ -69,15 +70,11 @@
     <Compile Include="Assets\1. Main\3. Scripts\Monster\MonsterFSM\MonsterStateAttack.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Manager\AnimationManager.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerFSM\PlayerStateRespawn.cs" />
-    <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerPractice\Skill\Skill1.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\FSM\FSM.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerFSM\PlayerStateChase.cs" />
-    <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerPractice\Skill\Skill2.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerMove.cs" />
     <Compile Include="Assets\2.External\Google Sheets to Unity\Scripts\v4\GoogleAuthrisationHelper.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\ScriptableObject\ItemDataSO.cs" />
-    <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerPractice\PlayerAttackPractice.cs" />
-    <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerPractice\Skill\UseSkill.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Data\ItemData.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Manager\GameManager.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Manager\MonsterSpawnManager.cs" />
@@ -102,18 +99,20 @@
     <Compile Include="Assets\1. Main\3. Scripts\UI\Inventory\InventoryMain.cs" />
     <Compile Include="Assets\2.External\Google Sheets to Unity\Scripts\Utils\SecondaryKeyDictionary.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Monster\MonsterFSM\MonsterStateReset.cs" />
+    <Compile Include="Assets\1. Main\3. Scripts\Player\Skill\UseSkill.cs" />
     <Compile Include="Assets\2.External\Google Sheets to Unity\Scripts\Utils\GoogleSheetsToUnityConfig.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerAttack.cs" />
+    <Compile Include="Assets\1. Main\3. Scripts\Player\Skill\Skill2.cs" />
+    <Compile Include="Assets\1. Main\3. Scripts\Player\Skill\DefaultSkill.cs" />
     <Compile Include="Assets\2.External\Google Sheets to Unity\Scripts\Utils\GoogleSheetsToUnityUtilities.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerFSM\PlayerStateDie.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Data\SkillData.cs" />
     <Compile Include="Assets\2.External\Google Sheets to Unity\Scripts\v4\Private\SpreadsheetManager.cs" />
-    <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerPractice\Skill\Skill3.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\UI\Inventory\EquipmentInventoryMain.cs" />
     <Compile Include="Assets\2.External\Google Sheets to Unity\Scripts\v4\Public\SpreadsheetManager.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Monster\MonsterFSM\MonsterStateIdle.cs" />
-    <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerPractice\Skill\DefaultSkill.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Monster\MonsterFSM\MonsterStateDie.cs" />
+    <Compile Include="Assets\1. Main\3. Scripts\Player\Skill\Skill1.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Manager\DataManager.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Player\PlayerFSM\PlayerStateIdle.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Manager\SpawnMonsterList.cs" />
@@ -125,6 +124,7 @@
     <Compile Include="Assets\2.External\Google Sheets to Unity\Animal Example\Scripts\AnimalObject.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Manager\SpawnAreaManager.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\Manager\KeyManager.cs" />
+    <Compile Include="Assets\1. Main\3. Scripts\CubeMove.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\UI\Option\KeySettingController.cs" />
     <Compile Include="Assets\2.External\Google Sheets to Unity\Animal Example\Scripts\Scriptable Objects\Animal.cs" />
     <Compile Include="Assets\1. Main\3. Scripts\UI\Inventory\EquipmentSlot.cs" />

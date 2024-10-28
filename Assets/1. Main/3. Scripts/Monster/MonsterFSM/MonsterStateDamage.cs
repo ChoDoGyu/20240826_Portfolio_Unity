@@ -6,6 +6,7 @@ public class MonsterStateDamage : FSMSingleton<MonsterStateDamage>, FSMState<Mon
 {
     public void Enter(MonsterController e)
     {
+        e.m_monsterAgent.isStopped = true;
         print("몬스터 맞는다.");
     }
     public void Execute(MonsterController e)
@@ -26,6 +27,6 @@ public class MonsterStateDamage : FSMSingleton<MonsterStateDamage>, FSMState<Mon
     }
     public void Exit(MonsterController e)
     {
-
+        e.m_monsterAgent.isStopped = false;
     }
 }

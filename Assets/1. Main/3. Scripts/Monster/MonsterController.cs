@@ -6,12 +6,14 @@ using UnityEngine.UI;
 
 public class MonsterController : FSM<MonsterController>, IClickable
 {
+    public Rigidbody m_monsterRigidbody;
+
     [SerializeField]
     private MonsterData m_monsterData;
     public MonsterData m_MonsterData => m_monsterData;
     [HideInInspector]
     public NavMeshAgent m_monsterAgent;
-    //[HideInInspector]
+    [HideInInspector]
     public PlayerManager m_player;
 
     [HideInInspector]
@@ -27,12 +29,14 @@ public class MonsterController : FSM<MonsterController>, IClickable
 
     public bool m_isDie = false;
 
-    //[HideInInspector]//시작 위치
+    [HideInInspector]//시작 위치
     public Vector3 m_startPos;
-    
+    [HideInInspector]//플레이어의 방향
+    public Vector3 m_playerdir;
 
     private void Awake()
     {
+        m_monsterRigidbody = GetComponent<Rigidbody>();
         m_monsterAgent = GetComponent<NavMeshAgent>();
         m_player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
         InitState(this, MonsterStateIdle.m_Inst);
@@ -72,7 +76,7 @@ public class MonsterController : FSM<MonsterController>, IClickable
         {
             ChangeState(MonsterStateReset.m_Inst);
         }
-
+        m_playerdir = m_player.transform.position - transform.position;
     }
     //플레이어와의 거리 체크
     public bool CheckDistance(Vector3 target, float distance)

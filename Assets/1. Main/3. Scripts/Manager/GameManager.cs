@@ -34,10 +34,7 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            UIManager.Instance.m_EscWindow.SetActive(true);
-        }
+
     }
     public void IsDie()
     {

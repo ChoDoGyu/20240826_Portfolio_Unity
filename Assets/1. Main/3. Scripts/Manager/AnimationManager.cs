@@ -16,5 +16,12 @@ public class AnimationManager : MonoBehaviour
 
         m_animator.SetFloat("MoveSpeed", number);
     }
-    
+    public void ParameterBool(string boolname, bool onoff)
+    {
+        m_animator.SetBool(boolname, onoff);
+    }
+
+
+
+
 }

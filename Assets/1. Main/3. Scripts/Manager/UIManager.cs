@@ -46,7 +46,10 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         HPControl();
-       
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            m_EscWindow.SetActive(true);
+        }
     }
     void HPControl()
     {

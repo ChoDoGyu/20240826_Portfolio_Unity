@@ -9,136 +9,72 @@ using UnityEditor;
 //스킬 데이터는 리스트에 넣어놓고 정할때마다 바꿔서 적용하면 됨
 public class PlayerAttack : MonoBehaviour
 {
-    public enum SkillGroup
-    {
-        Skill0,//기본 기술(평타)
-        Skill1,//스킬1
-        Skill2,//스킬2
-        Skill3//스킬3
-    }
-    [SerializeField,Header("현재 스킬")]
-    public SkillGroup m_curskill;
+    [Header("현재 스킬")]
+    public UseSkill m_curSkill;
+    [Header("기본 스킬")]
+    public UseSkill m_defaultSkill;
+    public UseSkill m_lastSkill;
+
     [SerializeField, Header("공격 지역")]
     public GameObject m_attackArea;
-    [SerializeField, Header("스킬 데이터 리스트")]
-    public List<SkillData> m_skillDataList = new List<SkillData>();
 
     public float m_curAttackRange;
     public float m_curAttackPoint;
 
-    public bool m_skillState = false;
-    public bool m_useSkill1 = false;
-    public bool m_useSkill2 = false;
-    public bool m_useSkill3 = false;
+    PlayerManager m_player;
 
-    void Awake()
+    private void Awake()
     {
-        
+        m_defaultSkill = GetComponent<DefaultSkill>();
+        m_player = GetComponent<PlayerManager>();
     }
     void Start()
     {
-
+        m_curSkill = m_defaultSkill;
+        m_curSkill.InitSeting();
+        m_lastSkill = m_curSkill;
     }
     void Update()
     {
-        SkillChange();
-        UseSkill();
+        if (m_lastSkill != m_curSkill)
+        {
+            m_lastSkill = m_curSkill;
+            m_curSkill.InitSeting();
+        }
+        m_curSkill.Using();
+        ChangeSkill();
+        SkillUsing();
     }
-    void SkillChange()
+    void ChangeSkill()
     {
-        switch(m_curskill)
+        
+        if (Input.GetKeyDown(KeyManager.Instance.GetKeyCode("SkillQuickSlot1")))
         {
-            case SkillGroup.Skill0:
-                m_curAttackRange = m_skillDataList[0].m_attackRange;
-                m_attackArea.transform.localScale = new Vector3(3, 2, m_skillDataList[0].m_attackRange);
-                m_attackArea.transform.localPosition = new Vector3(0, 0, m_skillDataList[0].m_attackRange / 2);
-                m_curAttackPoint = m_skillDataList[0].m_skillDamage;
-                break;
-            case SkillGroup.Skill1:
-                m_curAttackRange = m_skillDataList[1].m_attackRange;
-                m_attackArea.transform.localScale = new Vector3(3, 2, m_skillDataList[1].m_attackRange);
-                m_attackArea.transform.localPosition = new Vector3(0, 0, m_skillDataList[1].m_attackRange / 2);
-                m_curAttackPoint = m_skillDataList[1].m_skillDamage;
-                break;
-            case SkillGroup.Skill2:
-                m_curAttackRange = m_skillDataList[2].m_attackRange;
-                m_attackArea.transform.localScale = new Vector3(3, 2, m_skillDataList[2].m_attackRange);
-                m_attackArea.transform.localPosition = new Vector3(0, 0, m_skillDataList[2].m_attackRange / 2);
-                m_curAttackPoint = m_skillDataList[2].m_skillDamage;
-                break;
-            case SkillGroup.Skill3:
-                m_curAttackRange = m_skillDataList[3].m_attackRange;
-                m_attackArea.transform.localScale = new Vector3(3, 2, m_skillDataList[3].m_attackRange);
-                m_attackArea.transform.localPosition = new Vector3(0, 0, m_skillDataList[3].m_attackRange / 2);
-                m_curAttackPoint = m_skillDataList[3].m_skillDamage;
-                break;
-
+            Skill1 skill1 = GetComponent<Skill1>();
+            m_curSkill = skill1;
+            
+        }
+        else if (Input.GetKeyDown(KeyManager.Instance.GetKeyCode("SkillQuickSlot2")))
+        {
+            Skill2 skill2 = GetComponent<Skill2>();
+            m_curSkill = skill2;
+        }
+        else if (Input.GetKeyDown(KeyManager.Instance.GetKeyCode("SkillQuickSlot3")))
+        {
+            Skill3 skill3 = GetComponent<Skill3>();
+            m_curSkill = skill3;
+            m_player.m_aniManager.ParameterBool("Skill3", true);
         }
     }
-    public void UseSkill()
+    void SkillUsing()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (m_player.m_aniManager.m_animator.GetCurrentAnimatorStateInfo(0).IsName("Skill3"))
         {
-            m_skillState = true;
-            m_useSkill1 = true;
-            m_useSkill2 = false;
-            m_useSkill3 = false;
+            if (m_player.m_aniManager.m_animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.9f)
+            {
+                m_curSkill = m_defaultSkill;
+                m_player.m_aniManager.ParameterBool("Skill3", false);
+            }
         }
-        else if(Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            m_skillState = true;
-            m_useSkill1 = false;
-            m_useSkill2 = true;
-            m_useSkill3 = false;
-        }
-        else if(Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            m_skillState = true;
-            m_useSkill1 = false;
-            m_useSkill2 = false;
-            m_useSkill3 = true;
-        }
-        if(Input.GetKeyUp(KeyCode.Alpha1))
-        {
-            m_skillState = false;
-            m_useSkill1 = false;
-        }
-        else if(Input.GetKeyUp(KeyCode.Alpha2))
-        {
-            m_skillState = false;
-            m_useSkill2 = false;
-        }
-        else if( Input.GetKeyUp(KeyCode.Alpha3))
-        {
-            m_skillState = false;
-            m_useSkill3 = false;
-        }
-
-
-        //if (Input.GetKeyDown(KeyCode.Alpha1))
-        //{
-        //    m_curskill = SkillGroup.Skill1;
-        //}
-        //else if (Input.GetKeyDown(KeyCode.Alpha2))
-        //{
-        //    m_curskill = SkillGroup.Skill2;
-        //}
-        //else if (Input.GetKeyDown(KeyCode.Alpha3))
-        //{
-        //    m_curskill = SkillGroup.Skill3;
-        //}
-        //if (Input.GetKeyUp(KeyCode.Alpha1))
-        //{
-        //    m_curskill = SkillGroup.Skill0;
-        //}
-        //else if (Input.GetKeyUp(KeyCode.Alpha2))
-        //{
-        //    m_curskill = SkillGroup.Skill0;
-        //}
-        //else if (Input.GetKeyUp(KeyCode.Alpha3))
-        //{
-        //    m_curskill = SkillGroup.Skill0;
-        //}
     }
-    
 }
