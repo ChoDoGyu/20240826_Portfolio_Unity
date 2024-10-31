@@ -7,6 +7,7 @@ public class MonsterStateReset : FSMSingleton<MonsterStateReset>, FSMState<Monst
     public void Enter(MonsterController e)
     {
         print("¸®¼Â");
+        e.m_aniManager.ParameterBool("Run", true);
     }
     public void Execute(MonsterController e)
     {
@@ -20,6 +21,6 @@ public class MonsterStateReset : FSMSingleton<MonsterStateReset>, FSMState<Monst
     }
     public void Exit(MonsterController e)
     {
-
+        e.m_aniManager.ParameterBool("Run", false);
     }
 }

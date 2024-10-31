@@ -14,4 +14,15 @@ public class Skill1 : UseSkill
     {
         base.Using();
     }
+    void Skill1Attack()
+    {
+        print("스킬1공격");
+        for (int i = 0; i < m_playermanager.m_attackAreaUnit.m_unitList.Count; i++)
+        {
+            MonsterController controller = m_playermanager.m_attackAreaUnit.m_unitList[i].GetComponent<MonsterController>();
+            controller.m_hpManager.ReduceHp(m_playermanager.m_playerAttackPoint + m_skillDataStruct.m_skillDamage);
+            controller.ChangeState(MonsterStateDamage.m_Inst);
+            //controller.m_monsterRigidbody.MovePosition(transform.position - controller.m_playerdir.normalized * 1);
+        }
+    }
 }

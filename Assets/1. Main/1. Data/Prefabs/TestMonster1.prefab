@@ -33,7 +33,7 @@ RectTransform:
   m_Father: {fileID: 6834665018408014732}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -442,7 +442,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a10ef62bfe9b2854e8d73ed0903a59d9, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -507,7 +507,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5801316201543413882
 Transform:
   m_ObjectHideFlags: 0
@@ -631,6 +631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c8f70ae52d7d64409accdb2c6339a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_monsterRigidbody: {fileID: 0}
   m_monsterData: {fileID: 11400000, guid: 74283c098f0219445be450efd67dd8eb, type: 2}
   m_monsterAgent: {fileID: 0}
   m_player: {fileID: 0}
@@ -640,6 +641,7 @@ MonoBehaviour:
   m_slider: {fileID: 1720681526390226659}
   m_isDie: 0
   m_startPos: {x: 0, y: 0, z: 0}
+  m_playerdir: {x: 0, y: 0, z: 0}
 --- !u!114 &6705466559707481234
 MonoBehaviour:
   m_ObjectHideFlags: 0

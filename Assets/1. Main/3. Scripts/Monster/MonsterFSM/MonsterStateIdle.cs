@@ -7,7 +7,7 @@ public class MonsterStateIdle : FSMSingleton<MonsterStateIdle>,FSMState<MonsterC
 
     public void Enter(MonsterController e)
     {
-
+        print("몬스터 아이들");
     }
     public void Execute(MonsterController e)
     {
@@ -20,10 +20,10 @@ public class MonsterStateIdle : FSMSingleton<MonsterStateIdle>,FSMState<MonsterC
                 e.ChangeState(MonsterStateChase.m_Inst);
             }
         }
-        if (e.m_player.m_isDie)
-        {
-            e.ChangeState(MonsterStateReset.m_Inst);
-        }
+        //if (e.m_player.m_isDie)
+        //{
+        //    e.ChangeState(MonsterStateReset.m_Inst);
+        //}
     }
     public void Exit(MonsterController e) 
     {

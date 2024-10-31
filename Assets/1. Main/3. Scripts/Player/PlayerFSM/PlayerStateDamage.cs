@@ -7,21 +7,29 @@ public class PlayerStateDamage : FSMSingleton<PlayerStateDamage>, FSMState<Playe
     public void Enter(PlayerManager e)
     {
         print("플레이어 맞는다.");
+        e.m_aniManager.ParameterBool("Damage", true);
     }
     public void Execute(PlayerManager e)
     {
-        if (e.m_hpManager.m_hp > 0)
+        if (e.m_aniManager.m_animator.GetCurrentAnimatorStateInfo(0).IsName("Damage"))
         {
-            //데미지 애니메이션 재생이 완료되면 상태 변경이 맞을듯...
-            e.ChangeState(PlayerStateIdle.m_Inst);
+            if (e.m_aniManager.m_animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.9f)
+            {
+                if (e.m_hpManager.m_hp > 0)
+                {
+                    e.ChangeState(PlayerStateIdle.m_Inst);
+                }
+                else
+                {
+                    e.ChangeState(PlayerStateDie.m_Inst);
+                }
+                
+            }
         }
-        else
-        {
-            e.ChangeState(PlayerStateDie.m_Inst);
-        }
+
     }
     public void Exit(PlayerManager e)
     {
-
+        e.m_aniManager.ParameterBool("Damage", false);
     }
 }

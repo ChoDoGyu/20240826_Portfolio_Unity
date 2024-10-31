@@ -22,6 +22,10 @@ public class PlayerStateChase : FSMSingleton<PlayerStateChase>, FSMState<PlayerM
         if(distance >= 1)
         {
             number += Time.deltaTime;
+            //if(number >= 0.99f)
+            //{
+            //    number = 0.99f;
+            //}
             e.m_aniManager.MoveAnimation(number);
         }
         else

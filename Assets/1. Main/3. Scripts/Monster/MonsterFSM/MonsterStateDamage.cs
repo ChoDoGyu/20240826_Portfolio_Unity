@@ -8,6 +8,7 @@ public class MonsterStateDamage : FSMSingleton<MonsterStateDamage>, FSMState<Mon
     {
         e.m_monsterAgent.isStopped = true;
         print("몬스터 맞는다.");
+        //e.m_monsterRigidbody.MovePosition(e.transform.position - e.m_playerdir.normalized);
     }
     public void Execute(MonsterController e)
     {
@@ -20,10 +21,10 @@ public class MonsterStateDamage : FSMSingleton<MonsterStateDamage>, FSMState<Mon
         {
             e.ChangeState(MonsterStateDie.m_Inst);
         }
-        if (e.m_player.m_isDie)
-        {
-            e.ChangeState(MonsterStateReset.m_Inst);
-        }
+        //if (e.m_player.m_isDie)
+        //{
+        //    e.ChangeState(MonsterStateReset.m_Inst);
+        //}
     }
     public void Exit(MonsterController e)
     {

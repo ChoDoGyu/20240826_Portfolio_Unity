@@ -32,7 +32,6 @@ public class Skill3 : UseSkill
             MonsterController controller = m_playermanager.m_attackAreaUnit.m_unitList[i].GetComponent<MonsterController>();
             controller.m_hpManager.ReduceHp(m_playermanager.m_playerAttackPoint + m_skillDataStruct.m_skillDamage);
             controller.ChangeState(MonsterStateDamage.m_Inst);
-            controller.m_monsterRigidbody.MovePosition(transform.position - controller.m_playerdir.normalized * 2);
         }
     }
 }

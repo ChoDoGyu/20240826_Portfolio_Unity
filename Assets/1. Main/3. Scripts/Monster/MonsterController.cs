@@ -7,13 +7,13 @@ using UnityEngine.UI;
 public class MonsterController : FSM<MonsterController>, IClickable
 {
     public Rigidbody m_monsterRigidbody;
-
+    public AnimationManager m_aniManager;
     [SerializeField]
     private MonsterData m_monsterData;
     public MonsterData m_MonsterData => m_monsterData;
     [HideInInspector]
     public NavMeshAgent m_monsterAgent;
-    [HideInInspector]
+    //[HideInInspector]
     public PlayerManager m_player;
 
     [HideInInspector]
@@ -29,7 +29,7 @@ public class MonsterController : FSM<MonsterController>, IClickable
 
     public bool m_isDie = false;
 
-    [HideInInspector]//시작 위치
+    //[HideInInspector]//시작 위치
     public Vector3 m_startPos;
     [HideInInspector]//플레이어의 방향
     public Vector3 m_playerdir;
@@ -38,9 +38,11 @@ public class MonsterController : FSM<MonsterController>, IClickable
     {
         m_monsterRigidbody = GetComponent<Rigidbody>();
         m_monsterAgent = GetComponent<NavMeshAgent>();
+        m_aniManager = GetComponent<AnimationManager>();
         m_player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
         InitState(this, MonsterStateIdle.m_Inst);
         
+
         m_hpManager = GetComponent<HPManager>();
         m_hpManager.m_hp = m_monsterData.m_hp;
 
@@ -72,10 +74,10 @@ public class MonsterController : FSM<MonsterController>, IClickable
         m_slider.transform.LookAt(m_Camera.transform.position);
 
         //추격 거리 설정
-        if (!CheckDistance(m_startPos, m_MonsterData.m_sightRange * 2))
-        {
-            ChangeState(MonsterStateReset.m_Inst);
-        }
+        //if (!CheckDistance(m_startPos, m_MonsterData.m_sightRange * 2))
+        //{
+        //    ChangeState(MonsterStateReset.m_Inst);
+        //}
         m_playerdir = m_player.transform.position - transform.position;
     }
     //플레이어와의 거리 체크

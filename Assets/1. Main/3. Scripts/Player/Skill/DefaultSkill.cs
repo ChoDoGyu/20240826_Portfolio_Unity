@@ -16,7 +16,7 @@ public class DefaultSkill : UseSkill
         
 
     }
-    public void Attack()
+    public void DefaultAttack()
     {
         print("АјАн");
         for (int i = 0; i < m_playermanager.m_attackAreaUnit.m_unitList.Count; i++)

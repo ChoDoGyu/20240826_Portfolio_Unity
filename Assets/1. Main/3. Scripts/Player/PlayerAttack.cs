@@ -52,12 +52,14 @@ public class PlayerAttack : MonoBehaviour
         {
             Skill1 skill1 = GetComponent<Skill1>();
             m_curSkill = skill1;
-            
+            m_player.m_aniManager.ParameterBool("Skill1", true);
+
         }
         else if (Input.GetKeyDown(KeyManager.Instance.GetKeyCode("SkillQuickSlot2")))
         {
             Skill2 skill2 = GetComponent<Skill2>();
             m_curSkill = skill2;
+            m_player.m_aniManager.ParameterBool("Skill2", true);
         }
         else if (Input.GetKeyDown(KeyManager.Instance.GetKeyCode("SkillQuickSlot3")))
         {
@@ -74,6 +76,23 @@ public class PlayerAttack : MonoBehaviour
             {
                 m_curSkill = m_defaultSkill;
                 m_player.m_aniManager.ParameterBool("Skill3", false);
+            }
+        }
+        else if(m_player.m_aniManager.m_animator.GetCurrentAnimatorStateInfo(0).IsName("Skill2"))
+        {
+
+            if(m_player.m_aniManager.m_animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.9f)
+            {
+                m_curSkill = m_defaultSkill;
+                m_player.m_aniManager.ParameterBool("Skill2", false);
+            }
+        }
+        else if(m_player.m_aniManager.m_animator.GetCurrentAnimatorStateInfo(0).IsName("Skill1"))
+        {
+            if (m_player.m_aniManager.m_animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 0.8f)
+            {
+                m_curSkill = m_defaultSkill;
+                m_player.m_aniManager.ParameterBool("Skill1", false);
             }
         }
     }
