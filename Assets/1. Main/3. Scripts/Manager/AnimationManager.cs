@@ -20,8 +20,4 @@ public class AnimationManager : MonoBehaviour
     {
         m_animator.SetBool(boolname, onoff);
     }
-
-
-
-
 }

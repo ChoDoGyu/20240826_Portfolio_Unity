@@ -7,7 +7,7 @@ public class MonsterStateChase : FSMSingleton<MonsterStateChase>, FSMState<Monst
     public void Enter(MonsterController e)
     {
         print("몬스터 추적");
-        //e.m_aniManager.ParameterBool("Run", true);
+        e.m_aniManager.ParameterBool("Run", true);
     }
     public void Execute(MonsterController e)
     {
@@ -32,6 +32,6 @@ public class MonsterStateChase : FSMSingleton<MonsterStateChase>, FSMState<Monst
     }
     public void Exit(MonsterController e)
     {
-        //e.m_aniManager.ParameterBool("Run", false);
+        e.m_aniManager.ParameterBool("Run", false);
     }
 }
