@@ -10,6 +10,7 @@ public class PlayerStateAttack : FSMSingleton<PlayerStateAttack>, FSMState<Playe
         print("PlayerStateAttack");
         e.m_move.m_agent.isStopped = true;
         e.m_attackCheck = true;
+        e.m_aniManager.ParameterBool("DefaultAttack", true);
     }
     public void Execute(PlayerManager e)
     {
@@ -25,11 +26,6 @@ public class PlayerStateAttack : FSMSingleton<PlayerStateAttack>, FSMState<Playe
             {
                 e.m_move.Turn(e.m_monsterController.transform.position);
                 
-                if (Time.time > e.m_lastAttackTime + e.m_playerAttackDelay)
-                {
-                    e.m_aniManager.ParameterBool("DefaultAttack", true);
-                    e.m_lastAttackTime = Time.time;
-                }
                 if (e.m_monsterController.m_isDie)
                 {
                     if (e.m_attackAreaUnit.m_unitList.Count > 0)

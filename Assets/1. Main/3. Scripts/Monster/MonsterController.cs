@@ -119,4 +119,11 @@ public class MonsterController : FSM<MonsterController>, IClickable
         m_clicked = true;
         //player.m_playerAttack = true;
     }
+
+    public void MonsterAttack()
+    {
+        Debug.Log("Monster Attack!!");
+        m_player.m_hpManager.ReduceHp(m_MonsterData.m_damage);
+        m_player.ChangeState(PlayerStateDamage.m_Inst);
+    }
 }
