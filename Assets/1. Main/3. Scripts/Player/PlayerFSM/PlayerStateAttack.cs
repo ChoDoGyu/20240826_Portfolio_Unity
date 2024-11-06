@@ -24,8 +24,6 @@ public class PlayerStateAttack : FSMSingleton<PlayerStateAttack>, FSMState<Playe
         {
             if (e.m_attackAreaUnit.m_unitList.Count > 0)
             {
-                e.m_move.Turn(e.m_monsterController.transform.position);
-                
                 if (e.m_monsterController.m_isDie)
                 {
                     if (e.m_attackAreaUnit.m_unitList.Count > 0)
@@ -33,6 +31,7 @@ public class PlayerStateAttack : FSMSingleton<PlayerStateAttack>, FSMState<Playe
                         e.m_monsterController = e.m_attackAreaUnit.m_unitList[0];
                     }
                 }
+                e.m_move.Turn(e.m_monsterController.transform.position);
             }
             else
             {

@@ -36,7 +36,6 @@ public class MonsterSpawnManager : MonoBehaviour
     private void Start()
     {
         SpawnInPoints();
-        //SpawnInOnePoint();
     }
     private void Update()
     {
@@ -46,81 +45,33 @@ public class MonsterSpawnManager : MonoBehaviour
             m_spawnLastTime = Time.time;
         }
     }
-    GameObject CreateMonster( int monsterNumber)
+    GameObject CreateMonster(Transform point, int monsterNumber)
     {
         float xRandom = Random.Range(-2f, 2f);
         float zRandom = Random.Range(-2f, 2f);
         Vector3 randomPos = new Vector3(xRandom, 0, zRandom);
         GameObject obj = Instantiate(m_monsterList[monsterNumber]);
-        //obj.transform.position = point.position + randomPos;
-        {
-            //StartCoroutine(Coroutine_RandomPoint(point.position, m_range));
-            //if(m_spawn)
-            //{
+        obj.transform.position = point.position + randomPos;
 
-            //}
-            //obj.transform.position = m_monsterList[monsterNumber].transform.position;
-        }
         return obj;
     }
-    //bool RandomPoint(Vector3 center, float range, out Vector3 result)
-    //{
-    //    NavMeshHit hit;
-    //    for (int i = 0; i < 30; i++)
-    //    {
-    //        Vector3 randomPoint = center + Random.insideUnitSphere * range;
-
-    //        if(NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas))
-    //        {
-    //            result = hit.position;
-    //            return true;
-    //        }
-    //    }
-    //    result = Vector3.zero;
-    //    return false;
-    //}
-
-    //IEnumerator Coroutine_RandomPoint(Vector3 center, float range)
-    //{
-    //    NavMeshHit hit;
-    //    do
-    //    {
-    //        Vector3 randomPoint = center + Random.insideUnitSphere * range;
-
-    //        if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas))
-    //        {
-    //            m_spawn = true;
-    //            m_point = hit.position;
-
-    //        }
-    //        else
-    //        {
-    //            m_point = Vector3.zero;
-    //            m_spawn = false;
-    //        }
-    //        yield return null;
-    //    } while (!hit.hit);
-
-    //    yield return null;
-    //}
 
     void SpawnInPoints()
     {
+
         for(int i = 0; i < m_spawnAreaManager.m_spawnAreaList.Count; i++)
         {
             SpawnMonsterList spawnMonsterList = m_spawnAreaManager.m_spawnAreaList[i].GetComponent<SpawnMonsterList>();
-            while(!(spawnMonsterList.m_monsterList.Count == m_spawnNumbers))
+
+            while (!(spawnMonsterList.m_monsterList.Count == m_spawnNumbers))
             {
                 int number = Random.Range(0, m_monsterList.Count);
-                GameObject obj = CreateMonster(number);
-                
+                GameObject obj = CreateMonster(spawnMonsterList.transform, number);
                 MonsterController controller = obj.GetComponent<MonsterController>();
-
-                controller.gameObject.transform.position = m_spawnAreaManager.m_spawnAreaList[i].localPosition;
-                controller.m_startPos = obj.transform.position;
                 spawnMonsterList.m_monsterList.Add(obj);
             }
         }
+        
     }
 
 }

@@ -52,11 +52,15 @@ public class MonsterController : FSM<MonsterController>, IClickable
         //m_startPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         //GameObject tmp = GameObject.CreatePrimitive(PrimitiveType.Cube);
         //tmp.transform.position = m_startPos;
+        m_monsterAgent.enabled = false;
+        //StartCoroutine(Coroutine_NavMeshAgentEnable());
     }
     private void Start()
     {
         m_slider.maxValue = m_hpManager.m_hp;
         m_slider.value = m_hpManager.m_hp;
+
+        m_monsterAgent.enabled = true;
     }
     void Update()
     {
@@ -125,5 +129,10 @@ public class MonsterController : FSM<MonsterController>, IClickable
         Debug.Log("Monster Attack!!");
         m_player.m_hpManager.ReduceHp(m_MonsterData.m_damage);
         m_player.ChangeState(PlayerStateDamage.m_Inst);
+    }
+    IEnumerator Coroutine_NavMeshAgentEnable()
+    {
+        yield return new WaitForSeconds(0.5f);
+        m_monsterAgent.enabled = true;
     }
 }
