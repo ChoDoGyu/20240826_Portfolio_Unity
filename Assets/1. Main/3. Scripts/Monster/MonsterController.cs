@@ -48,8 +48,7 @@ public class MonsterController : FSM<MonsterController>, IClickable
 
         m_Camera = Camera.main;
 
-        //태어난 위치 저장 - 추격 범위를 위해
-        //m_startPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+
         //GameObject tmp = GameObject.CreatePrimitive(PrimitiveType.Cube);
         //tmp.transform.position = m_startPos;
         m_monsterAgent.enabled = false;
@@ -61,6 +60,9 @@ public class MonsterController : FSM<MonsterController>, IClickable
         m_slider.value = m_hpManager.m_hp;
 
         m_monsterAgent.enabled = true;
+
+        //태어난 위치 저장 - 추격 범위를 위해
+        m_startPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
     }
     void Update()
     {
@@ -126,9 +128,13 @@ public class MonsterController : FSM<MonsterController>, IClickable
 
     public void MonsterAttack()
     {
-        Debug.Log("Monster Attack!!");
-        m_player.m_hpManager.ReduceHp(m_MonsterData.m_damage);
-        m_player.ChangeState(PlayerStateDamage.m_Inst);
+        if(!m_player.m_isDie)
+        {
+            Debug.Log("Monster Attack!!");
+            m_player.m_hpManager.ReduceHp(m_MonsterData.m_damage);
+            m_player.ChangeState(PlayerStateDamage.m_Inst);
+        }
+
     }
     IEnumerator Coroutine_NavMeshAgentEnable()
     {

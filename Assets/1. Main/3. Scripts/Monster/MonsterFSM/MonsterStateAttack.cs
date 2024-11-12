@@ -19,15 +19,15 @@ public class MonsterStateAttack : FSMSingleton<MonsterStateAttack>, FSMState<Mon
         {
             e.ChangeState(MonsterStateIdle.m_Inst);
         }
-        //if (e.m_player.m_isDie)
-        //{
-        //    e.ChangeState(MonsterStateReset.m_Inst);
-        //}
+        if (e.m_player.m_isDie)
+        {
+            e.ChangeState(MonsterStateReset.m_Inst);
+        }
 
     }
     public void Exit(MonsterController e)
     {
-        e.m_monsterAgent.stoppingDistance = 3;
+        e.m_monsterAgent.stoppingDistance = 1;
         e.m_aniManager.ParameterBool("Attack", false);
     }
 

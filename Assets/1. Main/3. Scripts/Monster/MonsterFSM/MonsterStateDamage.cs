@@ -21,10 +21,10 @@ public class MonsterStateDamage : FSMSingleton<MonsterStateDamage>, FSMState<Mon
         {
             e.ChangeState(MonsterStateDie.m_Inst);
         }
-        //if (e.m_player.m_isDie)
-        //{
-        //    e.ChangeState(MonsterStateReset.m_Inst);
-        //}
+        if (e.m_player.m_isDie)
+        {
+            e.ChangeState(MonsterStateReset.m_Inst);
+        }
     }
     public void Exit(MonsterController e)
     {

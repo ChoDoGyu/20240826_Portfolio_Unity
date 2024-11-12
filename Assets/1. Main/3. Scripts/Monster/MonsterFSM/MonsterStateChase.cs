@@ -24,11 +24,15 @@ public class MonsterStateChase : FSMSingleton<MonsterStateChase>, FSMState<Monst
         {
             e.ChangeState(MonsterStateIdle.m_Inst);
         }
-        //if(e.m_player.m_isDie)
+        if (e.m_player.m_isDie)
+        {
+            e.ChangeState(MonsterStateReset.m_Inst);
+        }
+        //if(e.CheckDistance(e.m_startPos, e.m_MonsterData.m_sightRange * 3))
         //{
         //    e.ChangeState(MonsterStateReset.m_Inst);
         //}
-        
+
     }
     public void Exit(MonsterController e)
     {

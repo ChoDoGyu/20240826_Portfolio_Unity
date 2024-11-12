@@ -6,6 +6,7 @@ public class PlayerStateRespawn : FSMSingleton<PlayerStateRespawn>, FSMState<Pla
 {
     public void Enter(PlayerManager e)
     {
+        e.m_move.m_agent.isStopped = true;
         e.m_isDie = false;
         e.transform.position = e.m_spawnPoint.position;
         e.m_hpManager.m_hp = e.m_playerStaus.m_hp / 2;
@@ -18,6 +19,6 @@ public class PlayerStateRespawn : FSMSingleton<PlayerStateRespawn>, FSMState<Pla
     }
     public void Exit(PlayerManager e)
     {
-
+        e.m_move.m_agent.isStopped = false;
     }
 }
