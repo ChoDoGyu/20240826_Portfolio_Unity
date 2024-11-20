@@ -39,6 +39,9 @@ public class PlayerManager : FSM<PlayerManager>
     //[Header("클릭한 아이템")]
     //public ItemData m_clickedItem;
 
+    [Header("포션 회복량")]
+    float m_potion = 10f;
+
     #region 플레이어 스텟
     [HideInInspector]
     public int m_playerLevel;
@@ -74,6 +77,8 @@ public class PlayerManager : FSM<PlayerManager>
         FSMUpdate();
         MouseClick();
         ChangeStaus();
+
+        UsePotion();
     }
     void MouseClick()
     {
@@ -130,5 +135,12 @@ public class PlayerManager : FSM<PlayerManager>
     void ChangeStaus()
     {
         m_playerAttackPoint = m_playerStaus.m_damage + m_attack.m_curAttackPoint;
+    }
+    void UsePotion()
+    {
+        if(Input.GetKeyDown(KeyManager.Instance.GetKeyCode("Potion")))
+        {
+            m_hpManager.IncreaseHp(m_potion);
+        }
     }
 }

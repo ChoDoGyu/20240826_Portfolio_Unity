@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -30,10 +31,6 @@ public class GameManager : MonoBehaviour
     {
         m_player = FindObjectOfType<PlayerManager>();
         StartGameSetting();
-
-    }
-    private void Update()
-    {
 
     }
     public void IsDie()
@@ -80,5 +77,9 @@ public class GameManager : MonoBehaviour
 
 
         #endregion
+    }
+    public void GoLobby()
+    {
+        SceneManager.LoadScene(0);
     }
 }

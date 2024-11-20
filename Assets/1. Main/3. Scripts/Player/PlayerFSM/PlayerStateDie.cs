@@ -8,6 +8,7 @@ public class PlayerStateDie : FSMSingleton<PlayerStateDie>, FSMState<PlayerManag
     {
         e.m_isDie = true;
         e.m_aniManager.ParameterBool("Death", true);
+        GameManager.Instance.IsDie();
 
     }
     public void Execute(PlayerManager e)
